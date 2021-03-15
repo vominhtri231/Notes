@@ -1,0 +1,2 @@
+Appender is used to publish the logging information to the destination like file, console, etc
+![](https://examples.javacodegeeks.com/wp-content/uploads/2017/11/log4j-rolling-log-project-architecture-guide-1.jpg.webp)

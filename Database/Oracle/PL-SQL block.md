@@ -1,0 +1,1 @@
+![](https://cdn.oracletutorial.com/wp-content/uploads/2017/11/plsql-anonymous-block.png)
