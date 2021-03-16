@@ -36,17 +36,18 @@ Eg: Let say we have a stack
         while(!isEmpty()) dst.add(pop());
     }
 ```
-=> To maximun flexibility use wildcard types on input paramerters that represent producer or consumer. The simple rule is: ***PECS - PRODUCER EXTEND, COMSUMER SUPER***
+=> To maximize flexibility use wildcard types on input parameters that represent producer or consumer. 
+The simple rule is: ***PECS - PRODUCER EXTEND, CONSUMER SUPER***
 
 ### Remark
 1. A proper use of wildcard types, they are nearly invisible to user of the class. If user of a class has to think about wildcard type that means something wrong with the API  
-   => should not use wildcard type as return type because it force user to use wildcard type in client code
-2. Comparable and Comparators are comsumer. Eg: `Comparable<String>` consume a String and produce a integer. 
-   => A properly design of generic should be `Comparable<? super T>` insead of `Comparable<T>`. Eg:  
+   => should not use wildcard type as return type because it forces user to use wildcard type in client code
+2. Comparable and Comparators are consumer. Eg: `Comparable<String>` consume a String and produce an integer. 
+   => A proper design of generic should be `Comparable<? super T>` instead of `Comparable<T>`. Eg:  
 ``` java
 	<T extends Comparable<? super T>> T max(List<? extends T> list); // 1
 
     <T extends Comparable<T>> max(List<? extends T> list) // 2
 ```
-=> Method 1 will work for `ScheduledFuture` but 2 will not because it implement `Comparable<Delay>`, not `Comparable<ScheduledFuture>`.
+=> Method 1 will work for `ScheduledFuture` but 2 will not because it implements `Comparable<Delay>`, not `Comparable<ScheduledFuture>`.
 

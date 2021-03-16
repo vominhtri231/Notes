@@ -45,9 +45,9 @@ transaction.commit();
    An object is newly created and never been associated with Persistent context(Hibernate session) is in the New state.
 2. Persistent (JPA managed) state  
    An object is associated with persistent context is in Persistent state.  
-   Any changes made to objects in this state are automatically propagated to databases.
+   Any changes made toward objects in this state are automatically propagated to databases.
 3. Detached (unmanaged) state  
-   An object is becomes detached once the currenly running session is closed.  
-   To synchonise the changes of detached or new object, using `merge`.
+   An object is becomes detached once the currently running session is closed.  
+   To synchronize the changes of detached or new object, using `merge`.
 4. Removed state  
    Associated with the persistent context but are scheduled for removal from the data store.

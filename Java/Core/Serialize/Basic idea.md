@@ -10,4 +10,4 @@ ObjectInputStream in = ...;
 ABC e = (ABC) in.readObject(); // ABC implements serializable
 ```
  
-=> The puporse of serialization is to transfer objects from one VM to another or save to files for later retriving (in Wicket).
+=> The purpose of serialization is to transfer objects from one VM to another or save files for later retrieving (in Wicket).

@@ -1,11 +1,11 @@
 1. JMS client
     * JMS sender (or JMS publisher, JMS producer)
-    * JMS receiver (or JMS consumer, JMS subcriber)
+    * JMS receiver (or JMS consumer, JMS subscriber)
 2. Message Broker (or JMS Provider, JMS server)  
    The 3rd party system that responsible for implementing the JMS API.
-3. JMS Message: contain data being transfered   
+3. JMS Message: contain data being transferred   
    Contains 3 parts:
-    1. Header(required): data used to indentify and rounte message
+    1. Header(required): data used to identify and route message
     2. Properties: addition information for header
     3. Body: the actual data to be exchanged
 

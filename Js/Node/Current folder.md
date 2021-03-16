@@ -1,3 +1,3 @@
 | `__dirname` | `./` | `__filename` |
 | --- | --- | --- |
-| Get directory of the currently executing file| Get current working directory (where the terminal is open)| Get the currently executeing file |
+| Get directory of the currently executing file| Get current working directory (where the terminal is open)| Get the currently executing file |

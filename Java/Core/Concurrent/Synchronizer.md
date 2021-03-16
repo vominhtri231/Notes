@@ -1,5 +1,5 @@
 ## Wait/notify
-Standard idiom for using wait/nofity:
+Standard idiom for using wait/notify:
 
 ```java
 synchronized(obj) {
@@ -26,7 +26,7 @@ run.countDown();
 
 ## CycleBarrier
 
-CycleBarrier's constructor takes a integer indicate number of thread must be waiting so every thread could continue to run.
+CycleBarrier's constructor takes an integer indicate number of thread must be waiting so every thread could continue to run.
 
 ``` java 
 CycleBarrier run = new CycleBarrier(2);
@@ -40,7 +40,7 @@ run.await();
 
 ## Exchanger
 
-Allow to exchange object between threads.
+Allow exchanging object between threads.
 
 ```java
 Exchanger<String> exchanger = new Exchanger<>();

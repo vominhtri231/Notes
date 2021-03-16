@@ -2,9 +2,9 @@
 | Array | Generic |
 | :---  | :--- |
 | Covarian:  `Sup[]` is a suptype of `Super[]`| Invarian: `List<Sup>` is not a subtype of `List<Super>`|
-| Reified: Enforce type at runtime | Erasure: Enforce type at complile time then earse it
+| Reified: Enforce type at runtime | Erasure: Enforce type at compile time then erase it
 
-=> It is illegal to create array of generic type of type parameter, except for unboned wildcard types.  
+=> It is illegal to create array of generic type of type parameter, except for unbounded wildcard types.  
 Eg: `new List<String>[]`, `new List<E>[]` or `new E[]` are illegal, when `List<?>` is. Because `List<?>` contain the same information as complile time in runtime.
 
 ### Why it is illegal to create non-reified array

@@ -1,11 +1,13 @@
 ### Intro
-Guice supports method interception, allows you to write code excecuted each time a matching method is invoked. It's suited for cross cutting concerns (aspects), such as transactions, security, logging, etc.
+Guice supports method interception, allows you to write code executed each time a matching method is invoked. 
+It's suited for cross cutting concerns (aspects), such as transactions, security, logging, etc.
 
-Guice using this techniche to design `@Transactional` which will open the transaction before the invocation and will commit/rollback after the invocation.
+Guice using this technique to design `@Transactional` which will open the transaction before the invocation and will commit/rollback after the invocation.
 
 ### Components
 1. Matcher  
-   A simple interface that define the acceptance senerior for classes/methods. It could be annotated with, in package, in subpackage, subclass, etc. There is a factory class for it.
+   A simple interface that define the acceptance scenario for classes/methods.
+   It could be annotated with, in package, in sub-package, subclass, etc. There is a factory class for it.
 2. MethodInterceptor  
    It is executed whenever a matching method is invoked. They may inspect the method, its arguments, return value, exception, etc.
 

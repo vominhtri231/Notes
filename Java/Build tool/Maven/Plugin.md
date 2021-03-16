@@ -1,12 +1,12 @@
 ## Intro
-* Maven is a plugin execution framwork, every actions in Maven is done by plugins.
+* Maven is a plugin execution framework, every action in Maven is done by plugins.
 * There are 2 kinds of plugin in Maven:
-    1. Build: is declaired inside `<build/>` block
-    2. Report: is declaired inside `<reporting/>` block
+    1. Build: is declared inside `<build/>` block
+    2. Report: is declared inside `<reporting/>` block
 * You can use plugins that is supported by the maven project, 3rd-party plugins (at MojoHaus or any other sources) or write one.
 
 ## Write plugin
-The custome plugin should be named `<yourplugin>-maven-plugin`.  
+The customized plugin should be named `<yourplugin>-maven-plugin`.  
 The Mojo (Maven-old-java-object) is the goal of the plugin.
 
 ```java
@@ -56,7 +56,7 @@ mvn plugin-name
     </executions>
 </plugin>
 ```
-**Note:** If the goal don't have the default phase and the phase is not specify, it will not get executed at all.
+**Note:** If the goal don't have the default phase, and the phase is not specified, it will not get executed at all.
 ## Some common plugins
 * exec: To execute a project (execute only)   
   Eg: `mvn exec:java  -Dexec.mainClass=test.Main`

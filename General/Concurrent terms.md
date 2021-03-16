@@ -2,4 +2,6 @@
 * Mutual exclusion: when one thread using a share resource, other threads will be excluded from using it.
 * Critical regions: part of the program where shared resource is accessed.
 * Synchronization mechanism
-2. Safety failures - Liveness failures
+* Liveness failures: the program permanently unable to make forward progress.  
+  Some forms of liveness failures: Death-lock, starvation, live-lock, etc
+* Safety failures: the program run incorrectly

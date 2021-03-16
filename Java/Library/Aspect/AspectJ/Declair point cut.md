@@ -1,15 +1,15 @@
 ### Point cut types
 * `call` is used to capture the method call and will weave the caller
-* `execution` is used to capture the excetution and will weave the executor
-* `cflow` is used to capture all join points **under or equal** the sepecify point
-* `cflowblow` is used to capture all join joints **under** the specify point
+* `execution` is used to capture the execution and will weave the executor
+* `cflow` is used to capture all join points **under or equal** the specified point
+* `cflowblow` is used to capture all join joints **under** the specified point
 * `within` is used to capture join points under a class/package
 
 ```java
 pointcut call_cflow_callA() :  cflow(call(* MyClass.callA()));
 ```
 
-### Specical character
+### Special character
 ```java  
 // Using * to describe anything
 // Using + after a type to describe anysubtype of a type

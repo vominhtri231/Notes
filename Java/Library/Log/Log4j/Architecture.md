@@ -1,8 +1,9 @@
 ![](https://logging.apache.org/log4j/2.x/images/Log4jClasses.jpg)
 
-* The application want to use the logger has to request it from the LogManager/LoggerFactory which will select the approriate LoggerContext to obtain the logger.
+* The application want to use the logger has to request it from the LogManager/LoggerFactory which 
+  will select the appropriate LoggerContext to obtain the logger.
 * The logger will be associate with the LoggerContext with the same name/ package or the root context.
-* Each logger context have an active configuration, contains all appenders, context-wide filter, etc.
+* Each logger context have an active configuration, contains all appender, context-wide filter, etc.
 
 ```properties
 #The root logger context, named `stdout`

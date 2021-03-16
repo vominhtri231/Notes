@@ -4,7 +4,7 @@
 Pattern pattern = Pattern.compile(regex);
 Matcher macher = pattern.match(matchingString);
 
-// find the the next matched string, return true if successfull
+// find the the next matched string, return true if successful
 matcher.find(); 
 
 // To get all matched string
@@ -14,12 +14,12 @@ while (matcher.find()) {
 
 // The group index is the number of open bracket
 // Eg: With  regex: "(//d+) ([a-z])" 
-//    - group 0 is the whold message
+//    - group 0 is the whole message
 //    - group 1 is //d+
 //    - group 2 is [a-z]
 macher.group(0); 
 
-// relace matched string
+// replace matched string
 matcher.replaceAll(replaceString);
 matcher.replaceFirst(replaceString);
 
@@ -28,7 +28,7 @@ matcher.first();
 matcher.last();
 ```
 
-## String ultilities that use matcher under the hook
+## String utilities that use matcher under the hook
 
 ```java
 s.split(regex)

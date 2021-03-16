@@ -8,4 +8,4 @@ It could lead to:
 
 ### Solutions:
 1. Prefer cross-platform structure data representations like JSON or protobuf
-2. If you have to use serialization, never deserialize untrust data source and use object desrialization filtering (ObjectInputFilter).
+2. If you have to use serialization, never deserialize untrust data source and use object deserialization filtering (ObjectInputFilter).

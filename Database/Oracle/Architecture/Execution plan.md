@@ -87,18 +87,19 @@ DBMS_MONITOR.DATABASE_TRACE_DISABLE();
 The optimization approach for the query, includes: ALL_ROWS(default), FIRST_ROWS, FIRST_ROWS(N), can be set in a session.
 
 ### Access path
-1. For table: access full, acceess by row id, sample table scan
-2. For index: uniqe scan, range scan, full scan, fast full scan, skip scan, join scan
+1. For table: access full, access by row id, sample table scan
+2. For index: unique scan, range scan, full scan, fast full scan, skip scan, join scan
 
 ### Join method:
 A join operation is done by a driving table (outer table) and a inner table. The outer table could be recommended by `LEADING(table)`.
 1. Nested join  
-   This join is done by compare each value in driving table to each value in inner table => slow but return some row immediately. `USE_NL(table1 table2)`
+   This join is done by comparing each value in driving table to each value in the inner table 
+   => slow but return some row immediately. `USE_NL(table1 table2)`
 2. Merge join  
    This join is done by sort the sources first, then merge the source => better nested join if the sources is already sorted or very large. There are no driving/inner tables in sort merge join. `USE_MERGE(table1 table2)`
-3. Hash join  
+3. Hash join    
    This join is done by creating a hash table of the joinning key, then compare the hash value instead of the actual value=> Can only used in equijoin (join with equality operator). `USE_HASH(table1 table2)`
-4. Cartesian join  
+4. Cartesian join   
    Join each row from one table to each row of another => mostly happen because of missing join condition or cross join.
 
 **  Some additional information to join method: Outer join, Semi join, anti join  **
@@ -111,8 +112,8 @@ A join operation is done by a driving table (outer table) and a inner table. The
 4. Hash  
    There are: hash unique, hash group by, hash join
 5. Buffer  
-   Save the data in some place for later retrival. Eg: Buffer sort to save data in sort area.
-6. Inlist: If the `IN` clause have few elements and the field is indexed (same with multiple `OR` clause), the inlist operation will be used.
+   Save the data in some place for later retrieval. Eg: Buffer sort to save data in sort area.
+6. Inlist: If the `IN` clause have few elements, and the field is indexed (same with multiple `OR` clause), the inlist operation will be used.
 7. Count stopkey : When limit the number of rows by `rownum`
 8. Union-all: When `UNION` or `UNION ALL` is used
 9. Intersect: When `INTERSECT` is used

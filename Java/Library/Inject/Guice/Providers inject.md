@@ -1,5 +1,5 @@
 ## Intro
-The techniche that allow you to have more than one instance of a dependent type or to lazily load an instance.
+The technique that allow you to have more than one instance of a dependent type or to lazily load an instance.
 
 ```java
 public interface Provider<T> {

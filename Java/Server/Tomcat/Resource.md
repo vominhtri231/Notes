@@ -24,7 +24,7 @@ The `GlobalNamingResources` define the global resources for the Server.
 </GlobalNamingResources>
 ```
 
-These resources is not visible in the per-web-application context unless we link them with `ResourceLink` in the context.
+These resources are not visible in the per-web-application context unless we link them with `ResourceLink` in the context.
 ```xml
 <ResourceLink
     name="bean/MyBeanFactory"

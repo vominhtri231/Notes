@@ -28,4 +28,5 @@ enum Operation {
 }
 ````
 
-One of the disadvantage of accociating behavirors enum is code duplication if multiple enum constains have a same behaviror. This could be solve by **strategy enum**.
+One of the disadvantage of associating behaviors enum is code duplication if multiple enum contains have a same behavior. 
+This could be solved by **strategy enum**.

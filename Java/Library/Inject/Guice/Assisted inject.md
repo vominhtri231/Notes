@@ -1,8 +1,8 @@
 ## Intro
-The techniche that allow injection in only some fields but not all.
+The technique that allow injection in only some fields but not all.
 
 ## How to
-Use `@Assisted` to indicate field's value come from an argument, not injected. The value is later passed to by a Factory.
+Use `@Assisted` to indicate a field's value come from an argument, not injected. The value is later passed to by a Factory.
 ```java
 class Car {
     @Inject

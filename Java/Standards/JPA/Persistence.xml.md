@@ -1,11 +1,12 @@
 `persistence.xml` (placed in `/resource/META-INF/`)is the central configuration file for JPA. It is used to define one or more persistence units with these configs:
 1. Name and description of persistence unit
-2. Transaction type, you could chose between manage the transaction by yourself (RESOURCE_LOCAL) or by application server's JTA implementation (JTA) ([source](http://tomee.apache.org/jpa-concepts.html))
+2. Transaction type, you could choose between manage the transaction by yourself (RESOURCE_LOCAL) or by application server's JTA implementation (JTA) ([source](http://tomee.apache.org/jpa-concepts.html))
 3. The classes managed by persistence unit
 4. Persistence provider
-5. Data sources. Dependend on the transaction type, it could be `jta-data-source` or `non-jta-data-source`
-6. Entity validation: There are 3 validation modes: AUTO, CALLBACK (thrown exception if no bean validation implementation is avalable) and NONE
-7. Mode of 2nd level cache, which should be used to cache entity that often read by rarely change. There are 4 modes: ALL, NONE(default), ENABLE_SELECTED (only cache entities with `@Cacheable`) and DISABLE_SELECTED (only not cache entities with `@Cacheable(false)`)
+5. Data sources. Dependence on the transaction type, it could be `jta-data-source` or `non-jta-data-source`
+6. Entity validation: There are 3 validation modes: AUTO, CALLBACK (thrown exception if no bean validation implementation is available) and NONE
+7. Mode of 2nd level cache, which should be used to cache entity that often read by rarely change.
+   There are 4 modes: ALL, NONE(default), ENABLE_SELECTED (only cache entities with `@Cacheable`) and DISABLE_SELECTED (only not cache entities with `@Cacheable(false)`)
 8. Configuration parameters
 
 ```xml

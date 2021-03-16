@@ -4,17 +4,19 @@
 ![](https://lh3.googleusercontent.com/pw/ACtC-3frjdOwu3ZIMKasRH1iV_GkrJkygYAM70IBE6hFXMDohIPYU0v162J541NAIlzTE-Jlfzk67p7gktRcq3zHgKXzw7VRuEzuh45aJUHXbYH1HOHdpZVdwIevIwaTLHd2JZUD4m7Yi9ixWjL9eNTRsNxO=w141-h243-no)
 
 Block is a logical block, consist of several operating system blocks. Their size is preconfigured from 2-32KB (default 8KB).  
-Block header contains block type (block saving rows or indexes), row directory (physical addresses of each row - ROWIDs), table information (the table(s) the block saving the data for).  
-Data in a block is saved with space between them. You could use PCTFREE/PCTUSE to specify the space size. The more space means higher performace when editing a row but more spatial cost and vice versa.
+Block header contains block type (block saving rows or indexes), row directory (physical addresses of each row - ROWIDs), 
+table information (the table(s) the block saving the data for).  
+Data in a block is saved with space between them. You could use PCTFREE/PCTUSE to specify the space size. 
+The more space means higher performance when editing a row but more spatial cost and vice versa.
 
 ### Extent
 
 ### Segment
-There are 4 types of segments: Data, Index, Undo and Temporary. Temporay segment provides temporay work area.
+There are 4 types of segments: Data, Index, Undo and Temporary. Temporary segment provides temporary work area.
 
 ### Tablespace
 Used to group all related data in one container. There are 2 types of tablespace:
-1. Temporay tablespace contains temporary data that only need to be stored in a session, stored in temporay files
+1. Temporary tablespace contains temporary data that only need to be stored in a session, stored in temporary files
 2. Permanent tablespace stores persistent schema objects, stored in data files.
    Each database must have at least 2 tablespaces: SYSTEM and SYSAUX.
 

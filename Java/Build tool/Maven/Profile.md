@@ -1,5 +1,6 @@
 ## Introduction
-Profiles contain a subset of elements available in the POM, which could be activate/ deactivate => To make build results vary, make it portable.  
+Profiles contain a subset of elements available in the POM, which could be activated/ deactivated  
+=> To make build results vary, make it portable.  
 Could be defined in project level or setting level.
 ## Activation
 1. In command
@@ -33,7 +34,7 @@ For property: (can be activate by command like `-Denvironment=test`)
     <value>test</value>
 </property>
 ```
-For file:
+For missing file:
 ```xml
 <file>
     <missing>target/generated-sources/axistools/wsdl2java/org/apache/maven</missing>

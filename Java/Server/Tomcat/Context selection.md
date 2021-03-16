@@ -8,4 +8,4 @@ The context used to process request is selected based on __matching the longest 
 | Empty | None | Empty | ROOT |
 | /foo | 42 | /foo##42 | foo##42 |
 
-After selected, that context will select an servlet to handle the request base on `serverlet-mapping`.
+After selected, that context will select a servlet to handle the request base on `serverlet-mapping`.

@@ -54,6 +54,6 @@ END;
 1. Table import/export
 2. Schema import/export
 3. Database import/export
-4. Include/Exclude: by a pattern or a list
-5. Netword import: import by a database link, not a file
-6. Flashback export: all tables which is exported consistent to the same point in time. By default it is only consistent per table.  
+4. Include/Exclude: by a pattern, or a list
+5. Network import: import by a database link, not a file
+6. Flashback export: all tables which is exported consistent to the same point in time. By default, it is only consistent per table.  

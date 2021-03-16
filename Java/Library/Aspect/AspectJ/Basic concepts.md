@@ -20,7 +20,7 @@ pointcut callSayHello: call(* ABC.sayHello())
 Advice describe the crosscutting behavior.
 
 There are 2 types of Advices: before and after.  
-There are 2 interpretations that come after the after advice: After the join point excecuted successfully or after it throws an exception.
+There are 2 interpretations that come after the after advice: After the join point executed successfully or after it throws an exception.
 
 Eg:
 ```java

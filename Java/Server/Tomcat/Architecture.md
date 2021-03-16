@@ -21,7 +21,7 @@
            redirectPort="8443" />
 ```
 4. Engine  
-   Process request from the connector then hand the reponse back.
+   Process request from the connector then hand the response back.
 ```xml
 <Engine name="Catalina" defaultHost="localhost">
 </Engine>

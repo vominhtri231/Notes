@@ -1,5 +1,5 @@
 ## Intro
-Entities could be mapped via mappping.xml or annotation.   
+Entities could be mapped via mapping.xml or annotation.   
 The entity class must obey Java Bean Standard which is a serializable class, has default constructor and setter & getter methods to initialize he attributes.
 
 ## Base annotation

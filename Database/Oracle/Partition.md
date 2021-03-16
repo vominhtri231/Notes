@@ -1,4 +1,4 @@
-The techniche that allow tables, indexes to be divided into smaller pieces by a common column values.
+The technique that allow tables, indexes to be divided into smaller pieces by a common column values.
 
 There are 3 kind of partitions:
 1. Hash partition

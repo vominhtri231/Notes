@@ -1,4 +1,4 @@
-Weaving is the process of linking aspects with object.
+Weaving is the process of linking aspects with objects.
 
 ** Note :** To run an AspectJ program, it is required to have `aspectjrt` dependency as a runtime library.
 
@@ -45,7 +45,7 @@ The jar files must be listed in `<weaveDependencies/>` tag in configuration of t
     </configuration>
 </plugin>
 ```
-## Loadtime weaving
+## Load time weaving
 It is post compile weaving got postponed until the class have been loaded.  
 To enable this, `aspectjweaver` must be specified as javaagent.  
 It is configured in AOP.xml file.
