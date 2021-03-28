@@ -1,7 +1,7 @@
-![](https://lh3.googleusercontent.com/pw/ACtC-3d3e1VDQ0-64X5d82AXEXKL8VquQqC_NgrtTM_ur6D-_lY8ViXury2W00hiiFnqI9U71NyGX6I1Xg-ueVQYFKz09DcHS8adWvZM9iVnKr9fZYt_cUEJibbRKGsp58q3xZnY2oX4YLQsy3nMahyds9af=w1520-h917-no)
+![](./img/architect.png)
 
-## PGA (Private Global Area)
-![](https://lh3.googleusercontent.com/pw/ACtC-3eJkxhsubZWRRxC_WKJlQLzfbcSOIUyhpc_oYgMJHQ5FvHhYLkb4ZJ7ZktjX_cDkbtX8Ho5c-IkKUKxCsQ6EOcw1hpdbreegB_DeKrqWdo9HBSLz6YHDs4yAukUQqy3gUWTcwklw1ffn0PRJWxVSKj6=w302-h413-no?authuser=0)
+# PGA (Private Global Area)
+![](./img/pga.jpg)
 
 Each user can only access their PGA. Each PGA would contain:
 1. Session area:   
@@ -13,8 +13,8 @@ Each user can only access their PGA. Each PGA would contain:
 5. Cursors area: Store cursor's information
 6. SQL work area: Space for operating data from the disc like sort, join, merge, group, etc 
    => Insufficient space in PGA could lead to performance issues.
-## SGA(Shared Global Area)
-#### Shared pool
+# SGA(Shared Global Area)
+## Shared pool
 1. Data dictionary cache  
    Contains cache information about the database objects definition and permission.  
    For example, when user query: `select * from Employee`, the database could look up to this cache instead of
@@ -26,8 +26,8 @@ Each user can only access their PGA. Each PGA would contain:
 3. Library cache  
    Shared SQL area contains the execution plans since creating them is a costly process.
    The library cache also contains procedures, packages, locks, etc.
-#### Database buffer cache
-![](https://lh3.googleusercontent.com/pw/ACtC-3cuzwp4lq05gg8XltGndirXXXfFF4ImLxMaS2Bu0x2bJbrpNim4wGXpfvN5BWqcHHUsGxqRksamBL-BqG7RFeMVBSRHF3fY0JFtZycdljq92xewJfLk410f4NNqqSH57uTVBOB-LYNtSBnTdiTc6fOc=w434-h473-no)
+## Database buffer cache
+![](./img/buf_cache.jpg)
 
 This is the largest memory area in SGA. Oracle will copy data block from disc to buffer cache to speed up the query 
 since reading from memory is way faster than from disc. Once a query need data of some table, it will first check on the buffer cache and only query the missing one.  
@@ -37,8 +37,8 @@ Once user update, the data will be copied to the buffer cache, modified, and whe
 Database Writer Process will write to the disc. 
 This technique will also speed up the modification since the whole block is written. 
 Oracle also use this for concurrency handling.
-####  Redo log buffer
-![](https://lh3.googleusercontent.com/pw/ACtC-3eTOj--1230QqauWVSxRr7tLsaFilGuZjxtD4ScxI2xgCM7dXx5ruRgxKq7PWhUkMhu5shJEgROv8w4Hx2ITevaUIqxiuB-J0Wtvg336xv7TpPgSJ_MBfR-ndhstnEkfMtkk45iEMxEItd3tJj7NPge=w476-h360-no)
+##  Redo log buffer
+![](./img/redo_log.jpg)
 
 Once user change the database by inserting, updating, deleting, creating, alter, drop operation, 
 a redo log entry is created and saved. They will be used for recovery operation 
@@ -48,7 +48,7 @@ they will be written to the redo log files. Also, the Log Writer Process run eve
 If the user rollback, the redo log will also be deleted.  
 Redo log buffer is a circular buffer, when the buffer full, it will be written from the start.
 
-#### Java pool - Stream pool
+## Java pool - Stream pool
 Java pool contains Java classes used by the database.  
 Stream pool reponsible for streaming the data.
 

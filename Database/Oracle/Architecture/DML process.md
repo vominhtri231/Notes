@@ -1,4 +1,4 @@
-![](https://lh3.googleusercontent.com/pw/ACtC-3c8PCw1dmEL8oClOV-1WU3czLlsRsvoO_9h6NdNuQ6z5WGeS9p0iPycOycNaXgA-hytnZTftlpf25LwZlBIPKaSNSmPHGUg2Ke4R-ievEGgcz-JErdWNQVi2QVDV9hmSJ7sG8TFF6P8UxGesCRr-vEk=w1050-h623-no)
+![](./img/DML.jpg)
 
 ### When DML code run:
 1. The data is both load to buffer cache and saved in undo segments. Data in undo segments is kept unchanged and used for:

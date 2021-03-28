@@ -1,7 +1,7 @@
-![](https://lh3.googleusercontent.com/pw/ACtC-3coJ2JIvdUH4Kvbr40ETqtw5iirLAiWqxmo9T0VGlWECxdFRtF6KCrDDf5N-UNbRqWNBi81yJrfty11xdW4SMHyiidIKzyQo0YcCvHl5V4zb5ccDIGfLsAK2tn318XsR3DvDXXlNYIWzbsDgo5_IZgx=w940-h736-no)
+![](./img/logical_physical_dbs.jpg)
 
 ### Block
-![](https://lh3.googleusercontent.com/pw/ACtC-3frjdOwu3ZIMKasRH1iV_GkrJkygYAM70IBE6hFXMDohIPYU0v162J541NAIlzTE-Jlfzk67p7gktRcq3zHgKXzw7VRuEzuh45aJUHXbYH1HOHdpZVdwIevIwaTLHd2JZUD4m7Yi9ixWjL9eNTRsNxO=w141-h243-no)
+![](./img/database_block.png)
 
 Block is a logical block, consist of several operating system blocks. Their size is preconfigured from 2-32KB (default 8KB).  
 Block header contains block type (block saving rows or indexes), row directory (physical addresses of each row - ROWIDs), 

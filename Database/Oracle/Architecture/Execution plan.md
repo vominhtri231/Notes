@@ -1,12 +1,12 @@
 # HOW EXECUTION PLAN CREATED
-![](https://lh3.googleusercontent.com/pw/ACtC-3cuuXo_7KdvB3KL01fRD5y3fnv2YRTcBQLb3iX2SW-hDcBH87Dn5Ev8hEh1ykLLRSPiGr0RfuHe2yNdouf9r3yvpIILkKxTLwsEkmqD9dheoRxMRBNievRaZE_sMPZsGfokV0YHnaUxNGZ_856wedzI=w1354-h856-no)
+![](./img/parse_execution_plan.png)
 
 When a sql statement is executed, it first check the syntac, then the semantic (Whether the tables/columns is valid) and then permissions. If not, an error is return to the client, or else a PGA is allocated.  
 Then the query is checked if its execution plan exist in the shared SQL area and use it (soft parse). If not, the database have to create one (hard parse) by:
 1. Allocate a shared SQL area for storing the new execution plan  
    Only the query's hash value will be saved (By default 50 queries).
 2. Optimize to get the exceution plan
-   ![](https://lh3.googleusercontent.com/pw/ACtC-3ej17s9L2BS_BTDcBIrnZhqRgy0f4DRLL41mNYEO-A68bhu8tWooLHnHK6dhTu_o1BuidUNxKSWafzMSh6CDia0NHpJ_Xpu9v_dlxbZUjGHzg4WnxgAsKwiU_xpzCX8xSKxoCT1bN7N-mOpnkeHB679=w1025-h849-no?authuser=0)
+   ![](./img/query_optimizer.png)
    The optimizer have to come up with the best query it could generate in a specific given time (default is 1 second). It contains 3 components:
     1. Query transpormer  
        It will try to transporm the original query to a better one but sematically equivalent.  
@@ -14,7 +14,7 @@ Then the query is checked if its execution plan exist in the shared SQL area and
        The transformed queries will be estimated and chosen.
     2. Estimator  
        It will estimate the cost (= number of IO operations) of the query base on the statistic.
-       ![](https://lh3.googleusercontent.com/pw/ACtC-3dtyT1S-4xes3Km4fQCHkUqQMbLMvjAG8EHIEIMwVtLNx6ptYGySVhCEQVrF4dhtB8uuyt741plshz9CtPI79IDALCHwUyFrjkMjerFzBVEnco52LhmU-LDNqNWP447mwswTZ5nfAbWU7LyU2NdDGIE=w1931-h314-no?authuser=0)
+       ![](./img/cost_calculation.png)
     3. Plan Generator
        It will generate various paths for the query by trying different access paths, join methods and join orders.
 3. Generate row source:
