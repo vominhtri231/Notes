@@ -4,8 +4,12 @@ Standard idiom for using wait/notify:
 ```java
 synchronized(obj) {
     while(<condition not hold the lock>){
-        object.wait()
+        obj.wait();
     }
+}
+
+synchronized(obj){
+    obj.notify();
 }
 ```
 => Always use the wait loop  
@@ -44,7 +48,6 @@ Allow exchanging object between threads.
 
 ```java
 Exchanger<String> exchanger = new Exchanger<>();
-
 
 new Thread() {
     String exchangedString = exchanger.exchange("A")
