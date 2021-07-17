@@ -1,7 +1,10 @@
-![](../img/authorization_flow.jpg)
+# Authorization flow
 
-# Terms
-* Client: the application that asks for authorites
+![authorization-flow](../img/authorization_flow.jpg)
+
+## Terms
+
+* Client: the application that asks for authorities
 * Resource owner: the user that owns the resource
 * Authorization server
 * Resource server
@@ -10,7 +13,8 @@
 * Access token (or bearer token): the token that we could use to get the resource.  
  Each token has a scope indicate which resource could be gained by the token.
 
-# Example of a authorization request:
+## Example of a authorization request:
+
 ```http request
 https://authorization-server.com/oauth/authorize
 ?client_id=a17c21ed
@@ -21,6 +25,7 @@ https://authorization-server.com/oauth/authorize
 ```
 
 In that:
+
 * `client_id`: the client id of the application (registered to the authorization server)
 * `response_type`: type of the response
 * `state`: the state will be returned back after the request successed

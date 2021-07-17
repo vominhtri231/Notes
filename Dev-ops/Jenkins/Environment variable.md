@@ -1,9 +1,8 @@
-# Definition
-Jenkin Environmnet Variable is a global variable than can be accessed via `env` anywhere in the Jenkin file.  
+# Environment varirable
+
+Jenkin environment variable is a global variable than can be accessed via `env` anywhere in the Jenkin file.  
 
 The `env` variable save data as key-value form, as value is String.
-
-# How to use
 
 ## List all environment variables
 
@@ -37,7 +36,7 @@ steps {
   }
   // TEST_VARIABLE changed from here
 
-  withEnv(["ANOTHER_ENV_VAR=abc"]) {
+  withEnv(["A_ENV_VAR=123","ANOTHER_ENV_VAR=abc"]) {
     // ANOTHER_ENV_VAR changed in here only
   }
 }

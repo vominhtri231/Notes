@@ -1,5 +1,5 @@
 ## Dependency mediation
-If there are multiple versions of the same artifact, maven would pick the nearest dependency (dependency with the lower depth). If thre are multiple versions with the same depth, then the first one to be declared would be used.
+If there are multiple versions of the same artifact, maven would pick the **nearest dependency** (dependency with the lower depth). If there are multiple versions with the same depth, then the first one to be declared would be used.
 
 Eg: In this case artifact D with version 1.0 will be used.
 ```

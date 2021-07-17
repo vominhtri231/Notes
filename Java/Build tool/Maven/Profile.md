@@ -1,7 +1,7 @@
 ## Introduction
 Profiles contain a subset of elements available in the POM, which could be activated/ deactivated  
 => To make build results vary, make it portable.  
-Could be defined in project level or setting level.
+Profile could be defined in project level or setting level.
 ## Activation
 1. In command
 ```shell

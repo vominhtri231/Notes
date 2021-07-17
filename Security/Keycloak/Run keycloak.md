@@ -1,5 +1,6 @@
+# Run Keycloak
 
-* Run keycloak in standalone mode:
+* Run Keycloak in standalone mode:
 
 ```sh
 {$KEYCLOARK-HOME}/bin/standalone.bat "-Djboss.socket.binding.port-offset=1616"

@@ -1,9 +1,12 @@
-# Position parameters
+# Argument
+
+## Position parameters
 
 Using `"$1"` to get the first parameter and so on.  
 Using `$@` to get the parameter list
 
-# Named parameters
+## Named parameters
+
 Using `getopts` to parse the named parameters
 
 ```shell
