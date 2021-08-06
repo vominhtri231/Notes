@@ -23,7 +23,7 @@ Or you could access `VARIABLE_NAME` directly.
 You could set environment via `environment` block, `env.VARIABLE_NAME` or using `withEnv(["VARIABLE_NAME=value"]) {}`.
 
 The override order is `withEnv`, `environment`, `env`.  
-Eg: `withEnv` could override every environment varialble, `env.VARIABLE_NAME=...` could only override environment set by another `env.VARIABLE_NAME=...`.
+Eg: `withEnv` could override every environment variable, `env.VARIABLE_NAME=...` could only override environment set by another `env.VARIABLE_NAME=...`.
 
 ``` groovy
 environment {

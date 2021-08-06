@@ -7,6 +7,8 @@ git config [options] config-name config-value
 git config --global user.name "John Doe"
 ```
 
+The config values will be saved in .git/config
+
 ## Useful options
 * --replace-all : replace the config with same key (default)
 * --all: add a config without delete the old one

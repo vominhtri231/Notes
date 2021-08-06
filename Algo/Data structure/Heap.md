@@ -13,7 +13,6 @@ Example:
   / \   / \
  3   2 0   1
 
-
 ```
 |0|1|2|3|4|5|6|
 |-|-|-|-|-|-|-|
@@ -25,9 +24,9 @@ Example:
 1. Remove the root
 2. Swap the last element with the root
 3. Heapify down from  
-  (Swapping with left or right nodes)
+    (Swapping with left or right nodes)
 
 ### Insert to heap
 1. Insert element to the end of the heap
 2. Heapify up from the inserted index     
-  (Swapping with parent node)
+    (Swapping with parent node)

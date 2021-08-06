@@ -69,7 +69,7 @@ To keep the base resource API lean, filtering, sorting and searching should put 
 
 The constrain of REST design that include links for next possible actions inside output representation.
 
-Even though RESTful design principle encourage us to apply HATEOAS, it have several down sides: the decision of using the link usually happens at coding time, not run time; the client have to store more data than it have to and the cost the network payload, etc.
+Even though RESTful design principle encourage us to apply HATEOAS, it have several down sides: the decision of using the link usually happens at coding time, not run time; the client have to store more data than it have to and increase cost for the network payload, etc.
 
 ## Envelope
 
@@ -96,6 +96,43 @@ Pagination-Count: 100
 Pagination-Page: 5
 Pagination-Limit: 20
 ```
+
+## File Uploader
+
+Common rule: avoid using BASE64 encode binary content in JSON request as possible. Instead, using:
+
+1. Direct file upload  
+Using Content-Type for setting proper content.
+
+```http
+PUT /profile/1234/image HTTP/1.1
+Content-Type: image/jpeg
+Content-Length: 284
+
+raw image content
+```
+
+2. Multipart Http request  
+If the request support multiple files or associate data
+
+```http
+POST /profile/1234/images HTTP/1.1
+Content-Type: multipart/form-data; boundary=MultipartBoundry
+Accept-Encoding: gzip, deflate
+
+--MultipartBoundry
+Content-Disposition: form-data; name="image"; filename="12348024_1150631324960893_344096225642532672_n.jpg"
+Content-Type: image/jpeg
+
+raw image content
+--MultipartBoundry
+Content-Disposition: form-data; name="category"
+
+my-category
+--MultipartBoundry
+```
+3. 2 step metadata - upload   
+First, a request for metadata is called, return a link for uploading => prevent single transaction wrapper
 
 ## Rate limiting
 
