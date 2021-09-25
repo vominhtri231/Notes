@@ -2,8 +2,8 @@
 
 ## Incremental build
 
-Gradle would cache the build result and associate with input's hash value.  
-If input is unchanged, the cache will be used. The task will be marked as UP-TO-DATE
+Gradle would cache the build result and associate with input and output's hash values.  
+If input and output are unchanged, the cache will be used. The task will be marked as UP-TO-DATE.
 
 ## Wrapper
 
@@ -16,7 +16,6 @@ The wrapper files should be organized as below:
 task wrapper(type: Wrapper) { 
   gradleVersion = '1.7'  // task for generating wrapper files
 }
-
 
 |-build.gradle
 |-gradle

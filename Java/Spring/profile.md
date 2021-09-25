@@ -1,6 +1,6 @@
 # Profile
 
-Any component can be specify for a profile 
+Any component can be specify for a profile
 
 ```java
 @Configuration

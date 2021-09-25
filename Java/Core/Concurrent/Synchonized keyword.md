@@ -2,7 +2,7 @@
 
 ## How it works
 
-The `synchronized` keyword is used to ensure that only one thread could execute a block of code at one time. 
+The `synchronized` keyword is used to ensure that only one thread could execute a block of code at one time.
 
 ```java
 Object o = new Object();
@@ -45,5 +45,5 @@ In this example, the program  will never end because the change of `isStop` is u
 
 1. To guarantee that synchronization is work, **both read and write operations** has to be synchronized.  
 2. For communication purpose only, consider `volatile` keyword, which guarantees that read a variable will return most recently written value.
-3. Prevent calling alien code inside synchronized block because it could lead to death-lock, reduce performance, exception, etc. 
-   As a common rule, do as little as possible in synchronized block.
+3. Prevent calling alien code inside synchronized block because it could lead to death-lock, reduce performance, exception, etc.  
+  As a common rule, do as little as possible in synchronized block.

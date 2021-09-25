@@ -12,7 +12,7 @@ Using `$$` to get the program PID
 
 Using `getopts` to parse the named parameters
 
-```shell
+```sh
 file='default-file'
 dir='default-dir'
 while getopts f:d: params

@@ -50,5 +50,4 @@ Redo log buffer is a circular buffer, when the buffer full, it will be written f
 
 ## Java pool - Stream pool
 Java pool contains Java classes used by the database.  
-Stream pool reponsible for streaming the data.
-
+Stream pool responsible for streaming the data.

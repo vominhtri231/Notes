@@ -4,7 +4,7 @@ Profiles contain a subset of elements available in the POM, which could be activ
 Profile could be defined in project level or setting level.
 ## Activation
 1. In command
-```shell
+```sh
     mvn plugin -P profile-1, !profile-2
 ```
 2. Setting default profile

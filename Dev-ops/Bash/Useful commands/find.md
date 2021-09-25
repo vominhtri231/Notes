@@ -2,7 +2,7 @@
 
 Command for search for files, directories, etc
 
-```shell
+```sh
 # find all files/directories whose name contains `abc`
 find . -name '*abc*'
 
@@ -15,5 +15,4 @@ find . -path '**/src/.java' -type f
 # find all files end with `.tmp` and delete them
 find . -name '*.tmp' -exec rm {} \;
 find . -name '*.tmp' -delete
-
 ```

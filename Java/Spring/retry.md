@@ -3,8 +3,10 @@
 ## Prequisition
 
 For using spring retry, project must:
-1. Include dependencies: 
+
+1. Include dependencies:
 `org.springframework.retry:spring-retry` as well as `org.springframework.spring-aspects`
+
 2. Be configured with `@EnableRetry`
 
 ## @Retryable

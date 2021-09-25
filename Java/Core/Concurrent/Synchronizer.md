@@ -1,4 +1,7 @@
+# Synchronizer
+
 ## Wait/notify
+
 Standard idiom for using wait/notify:
 
 ```java
@@ -12,6 +15,7 @@ synchronized(obj){
     obj.notify();
 }
 ```
+
 => Always use the wait loop  
 
 ## CountDownLatch
@@ -32,7 +36,7 @@ run.countDown();
 
 CycleBarrier's constructor takes an integer indicate number of thread must be waiting so every thread could continue to run.
 
-``` java 
+```java
 CycleBarrier run = new CycleBarrier(2);
 
 executor.run(() -> {
@@ -74,6 +78,6 @@ try{
 
 ```
 
-#### Note
-* Mutex is the Semaphore that restrict one thread can access the resource.
+### Note
 
+* Mutex is the Semaphore that restrict one thread can access the resource.

@@ -4,7 +4,7 @@ Used to specify the program to run the script.
 
 Eg:
 
-```shell
+```sh
 #!usr/local/bin/python
 ...
 ```
@@ -13,7 +13,7 @@ So to execute the script, you just need `./a.py` instead of `python a.py`
 
 Eg:
 
-```shell
+```sh
 #!usr/bin/env python
 ```
 

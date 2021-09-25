@@ -1,18 +1,25 @@
+# Index
+
 ## Creating index
+
 * The indexes are saved in `user_indexes`
 * Can not have more than 1 active index for the same set of columns
-* Creating unique constraint would also create a unique index but not always.
-  If there is an index exists, no index will be created, no mater the index is unique or not.
+* Creating unique constraint would also create a unique index but not always.  
+  If there is an index exists, no index will be created, no matter the index is unique or not.
 * If there is a change in table structure, the index may out of date and need to be rebuilt.
+
 ```sql
 ALTER INDEX <index-name> REBUILD;
 ```
+
 * The index could be made invisible, for checking the performance, but the database still maintain it.
+
 ```sql
 ALTER INDEX <index-name> INVISIBLE; --or VISIBLE
 ```
 
 ## Attributes of index
+
 * Reverse: reverse the bit of column value to use as node value => should be used for auto increase column 
   with a lot of insert/update + can not be used for range scan.
 * Key compression
@@ -23,7 +30,8 @@ ALTER INDEX <index-name> INVISIBLE; --or VISIBLE
   If there is not too much duplicate, the performance will be decreased.
 
 ## There are 2 types of indexes
-1. B-Tree(Balance tree)
+
+### B-Tree(Balance tree)
 
 ![](https://docs.oracle.com/cd/E11882_01/server.112/e40540/img/cncpt244.gif)
 
@@ -31,7 +39,7 @@ ALTER INDEX <index-name> INVISIBLE; --or VISIBLE
 * B-tree indexes will not index the NULL values and will store values in order
 * Can be compressed
 
-2. Bitmap
+### Bitmap
 
 ![](https://www.oreilly.com/library/view/oracle-essentials-oracle9i/0596001797/tagoreillycom20070221oreillyimages76620.png)
 
@@ -44,11 +52,11 @@ ALTER INDEX <index-name> INVISIBLE; --or VISIBLE
 
 ## Using indexes
 
-* The index columns should stand clearly, without any arithmetic/ concatenation operation, 
+* The index columns should stand clearly, without any arithmetic/ concatenation operation, etc
   in order to make the optimizer chose to use the index.
 * If you really need the function with the column, should consider using function base indexes.
-* If using `LIKE` operation, the wildcard should not be on the start of the string. It would prevent the optimizer to use the indexes. 
+* If using `LIKE` operation, the wildcard should not be on the start of the string. It would prevent the optimizer to use the indexes.
   If you really need to search to last characters, consider creating indexes combine with reverse function.
-* B-tree indexes will not index the NULL value => using NULL value may suppress the usage of index. 
-  To fix this, we may try to add constraint or add `is not null` predicate or using bitmap indexes instead.
-* If the data types are mismatch, it required to have an implicit cast => may suppress usage of indexes.
+* B-tree indexes will not index the NULL value => using NULL value may suppress the usage of index.  
+  To fix this, we may try to add constraint `is not null` or using bitmap indexes instead.
+* If the data types are mismatch, it required to have an implicit cast => may suppress usage of indexes

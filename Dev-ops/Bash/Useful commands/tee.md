@@ -2,8 +2,6 @@
 
 `tee` command reads standard input and writes it to standard output and one or more file(s).
 
-![](./images/tee.png)
-
 ## Example
 
 ```sh

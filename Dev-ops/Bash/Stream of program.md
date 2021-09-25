@@ -10,13 +10,13 @@ Every program usually would have 2 primary streams:
 * `>` : specify the output stream
 * `2>` : specify the error stream
 
-```shell
+```sh
 echo "hello world" > hello.txt
 ```
 
 * `>>` : specify the output stream, but will append the stream only
 * `|` : use the last program result as the input for the next program
 
-```shell
+```sh
 ls -l | tail -n1
 ```

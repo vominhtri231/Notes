@@ -1,4 +1,7 @@
+# File Persistence.xml
+
 `persistence.xml` (placed in `/resource/META-INF/`)is the central configuration file for JPA. It is used to define one or more persistence units with these configs:
+
 1. Name and description of persistence unit
 2. Transaction type, you could choose between manage the transaction by yourself (RESOURCE_LOCAL) or by application server's JTA implementation (JTA) ([source](http://tomee.apache.org/jpa-concepts.html))
 3. The classes managed by persistence unit
@@ -39,7 +42,7 @@
             <property name="javax.persistence.lock.timeout" value="100"/>
             <property name="javax.persistence.query.timeout" value="100"/>
             
-            <!-- Java SE might not have a datasource, you could define the login infor for the provider-->
+            <!-- Java SE might not have a data source, you could define the login information for the provider-->
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/xyz" />
             <property name="javax.persistence.jdbc.user" value="postgres" />

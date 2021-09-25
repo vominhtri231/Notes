@@ -1,6 +1,6 @@
 # How to run Gradle
 
-```shell
+```sh
 gradle <task> [parameters] [-x <ignore-task>]
 ```
 
@@ -10,7 +10,7 @@ Task could be written in camel shorten form, as long as they are unique. Eg: yel
 
 Some help task:
 
-* tasks : show all tasks including their description
+* tasks : show all tasks including their description and group by their group
 * properties: show all properties of project
 
 ## Parameters

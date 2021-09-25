@@ -1,7 +1,7 @@
 # Shellcheck
 
-Check for validdity or common mistakes for a script
+Check for validity or common mistakes for a script
 
-```shell
+```sh
 shellcheck a.sh
 ```

@@ -39,7 +39,7 @@ public class GreetingMojo extends AbstractMojo
 
 ## Execute the plugins
 * Directly
-```shell
+```sh
 mvn plugin-name
 ```
 * Attach to build lifecycle by `executions` tag

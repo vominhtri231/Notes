@@ -1,4 +1,4 @@
-# Paging and sorting 
+# Paging and sorting
 
 Using `PagingAndSortingRepository` for paging and sorting in spring data jpa.
 
