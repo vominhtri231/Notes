@@ -1,7 +1,8 @@
 # Stream of program
 
 Every program usually would have 2 primary streams:
-* a input stream (By default is the keycloak) 
+
+* a input stream (By default is the keyboard)
 * a output stream (By default is the monitor)
 
 ## Rewired the stream (change the input and output stream)

@@ -1,5 +1,6 @@
-# Definition
-Prefix tree (Trie) and radix tree are used to saved arrays or strings, make searching for string faster. 
+# Prefix - radix tree
+
+Prefix tree (Trie) and radix tree are used to saved arrays or strings, make searching for string faster.
 
 * A prefix tree (or a trie) is a binary tree where each letter is saved in a node.  
 

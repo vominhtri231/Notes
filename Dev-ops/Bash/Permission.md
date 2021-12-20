@@ -1,7 +1,7 @@
 # Permisstion
 
-
 ## List files with permissions 
+
 To list all file/directory with full information:
 
 ```sh
@@ -10,7 +10,7 @@ ls -l
 
 The result will have the following format:
 
-```
+```txt
 drwxrwx--x join join ............ 
 ^ ^  ^  ^   ^    ^
 | |  |  |   |    The group

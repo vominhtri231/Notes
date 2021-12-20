@@ -34,7 +34,7 @@ abc.doFirst { println "First action" } // add the action to the beginning of the
 abc.doLast { println "Last action" } // add the action to the end of the list
 ```
 
-## Dependencies
+## Depends on
 
 Declare task's dependencies by:
 
@@ -45,16 +45,17 @@ Note that this only defined the task's dependencies, not execute order of those 
 
 ## Finalizer
 
-Declare task's finalizers as clean up tasks by method `finalizedBy`
+Declare task's finalizers as **clean up** tasks by method `finalizedBy`
 
 ## Input and output
 
-Task's input could be file(s), a directory or a property. Task's output could be file(s) or a directory. They are used in incremental build. As an alternative, you could implement the method `upToDateWhen(Closure)` which is evaluated at execution time instead of configuration time.
+Task's input could be file(s), a directory or a property. Task's output could be file(s) or a directory. They are used in incremental build (if input and output are not changed, the task will be skipped).  
+As an alternative, you could implement the method `upToDateWhen(Closure)` which is evaluated at execution time instead of configuration time.
 
 ```groovy
 task abc() {
-    input.property('a', ext.a)
-    output.file xyz
+    inputs.property('a', ext.a)
+    outputs.file xyz
 
     doLast {
       // the actual build logic here ...
