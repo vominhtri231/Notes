@@ -26,7 +26,9 @@ If a relation can only exist within the resource:
 If a relation can exist independently form the resource, consider returning their id within the resource. The consumer will later call relation endpoint.
 
 If a relation is generally requested along with the resource, consider offering functionality to embed the relation's representation
-Eg: GET /tickets/12?embed=customer.name,assigned_user
+
+Eg: GET `/tickets/12?embed=customer.name,assigned_user`
+
 This will get the customer name and assigned user along with the ticket
 
 ``` json

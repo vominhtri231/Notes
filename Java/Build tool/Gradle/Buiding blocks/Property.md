@@ -1,18 +1,25 @@
 # Properties
 
-Each instance of type like `Project` or `Task` provides property that can be accessed. If you want to declare extra properties, you could do it under the `ext` namespace.
+## Gradle properties
 
-```groovy
-project.ext.a = 'a'
+These settings can be use in the gradle script. (Not in the JVM)
 
-ext {
-    b = 'b'
-}
-```
+They are set via (first one found):
 
-## Ways to declare properties
+- command line -P or --project-prop
+- system property with prefix `org.gradle.project`, eg: `org.gradle.project.foo=bar`
+- environment variable with prefix `ORG_GRADLE_PROJECT`, eg: `ORG_GRADLE_PROJECT_foo=bar`
+- gradle.properties in GRADLE HOME
+- gradle.properties in project root
+- gradle.properties in gradle installation directory
 
-* Inside `build.gradle`
-* In gradle.properties under `<USER-HOME>/.gradle` or project root
-* Command-line options like `-D` or `-P`
-* Environment property following the pattern `ORG_GRADLE_PROJECT_propertyX`
+They can be use directly: `println abc`
+
+## System properties
+
+These settings can be used in the JVM and are set using:
+
+- command line -D
+- gradle file with prefix `systemProp`, eg: `systemProp.abc=abcValue`
+
+They can be used in the gradle script also: `println System.properties['abc']`

@@ -14,7 +14,7 @@ Service is a static IP address that can be attacked to each Pod. Since service's
 
 ## Ingress
 
-When expose the application to outside world with a secure protocol and a domain name, the request will go to ingress and it will be forwarded to the service.(You could expose the application by external service but it will have the format of `http:node-address:service-port`)
+When expose the application to outside world with a secure protocol and a domain name, the request will go to ingress and it will be forwarded to the service.(You could expose the application by external service but you have to access it via `http:node-address:service-port`)
 
 ![pod-service-ingress](./img/pod-service-ingress.jpg)
 
@@ -28,7 +28,20 @@ Data in config map or secret can be used as environment variables or properties 
 
 ## Volume
 
-Since K8s does not manage data persistence, volumes are used to attack the storage (can be local or external) with the pod.
+Since K8s does not manage data persistence, if a pod crash and get recreated, all of its data will be lost => volumes are used to attack the storage (can be local or external) with the pod.  
+A volume can be a folder or a drive inside a the host or in a remote server. You have to define both the volume and mount paths for its usages.
+
+```yml
+spec:
+  containers:
+  - image: <image-name>
+    name: <container-name>
+    volumeMounts:
+    - mountPath: /path
+      name: test-volume
+  volumes:
+  - name: test-volume
+```
 
 ![volume](./img/volume.jpg)
 

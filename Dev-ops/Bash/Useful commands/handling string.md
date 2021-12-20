@@ -1,4 +1,4 @@
-# Command for handling string
+# Commands for handling string
 
 ## sed
 
@@ -44,15 +44,21 @@ sort -k 3n      # sort by the third column as number
 
 ## awk
 
-The column-based stream processor
+The column-based stream processor.  
+It use variable from $1 -> $n for mapping column 1->n; $0 for the entire row; $NF for the last column.
 
 ```sh
 awk '($1>=2 && $1<10) {print $3}' 
 # print the 3 column if the first column is greater than 2 and less than 10
-
-awd -F ',' ... 
-# use comma instead of space as separator
 ```
+
+### AWK language
+
+`awk` command use AWK language for manipulating data. The language is a sequence of 'pattern {action}' pairs. By default the pattern would match all and the action would print all.
+
+### Useful flag
+
+* -F: specify different separator (The default separator is space)
 
 ## paste
 

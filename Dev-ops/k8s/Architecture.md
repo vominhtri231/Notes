@@ -5,7 +5,7 @@
 The node actually do the work, each have multiple pods installed on.  
 There are services must be installed on:
 
-* **Container runtime** that the pod will run on
+* **Container runtime** that the pod will run on (Eg: docker)
 * **Kuberlet**, which interacts with the container and node to schedule/control the pods
 * **Kube proxy**, which handle communication and load balancing
 
