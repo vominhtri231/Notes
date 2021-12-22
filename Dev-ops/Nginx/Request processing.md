@@ -1,6 +1,6 @@
 # Request processing
 
-## Select server
+## Server selection
 
 ```conf
   server {
@@ -20,7 +20,7 @@ Nginx will first select the server that process the request base on the address/
 
 If there are no matching `Host`, the default server that match address/port (set explicitly by `default_server` or the first one)
 
-## Chose location
+## Location selection
 
 ```conf
   location / {
@@ -36,4 +36,4 @@ If there are no matching `Host`, the default server that match address/port (set
   }
 ```
 
- Nginx will chose the most specific prefix location.
+ Nginx will chose the **most specific** prefix location.
