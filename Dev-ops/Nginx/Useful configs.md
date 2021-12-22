@@ -14,7 +14,7 @@ Set header for the response, eg: Content-Type, Cache-Control, etc
 * gzip_min_length: minimal length to be zipped
 * gzip_proxied: how to save the gzip files
 
-```
+```nginx
   gzip on;
   gzip_types      text/plain application/xml;
   gzip_proxied    no-cache no-store private expired auth;

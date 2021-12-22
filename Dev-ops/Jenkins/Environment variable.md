@@ -1,4 +1,4 @@
-# Environment varirable
+# Environment variable
 
 Jenkin environment variable is a global variable than can be accessed via `env` anywhere in the Jenkin file.  
 

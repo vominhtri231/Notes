@@ -1,3 +1,4 @@
+# Run in parallel
 
 ```groovy
 parallel
@@ -10,6 +11,7 @@ parallel
     failFast: true
 ```
 
-Parameter is a map of
-* brand name to the job closure and 
+Parameter is a map of:
+
+* brand name to the job closure
 * `failFast` to boolean indicate whether the step be terminate if one branch fail
