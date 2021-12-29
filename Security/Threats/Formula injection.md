@@ -10,7 +10,7 @@ When user open a spreadsheet (excel, csv etc), the spreadsheet program (excel, o
 =cmd|’ /C notepad’!’A1′ 
 ```
 
-The DDE (Dynamic Data Exchange) function can execute applicaiton command.  
+The DDE (Dynamic Data Exchange) function can execute application command.  
 This would open the notepad program whenever user open the spreadsheet
 
 ```excel
