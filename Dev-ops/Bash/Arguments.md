@@ -3,9 +3,9 @@
 ## Position parameters
 
 Using `$1` to get the first parameter and so on.  
-Using `$?` to get the last command return code (0 if successs)  
+Using `$?` to get the last command return code (0 if success)  
 Using `$@` to get the parameter list  
-Using `$#` to number of arguments   
+Using `$#` to number of arguments
 Using `$$` to get the program PID
 
 ## Named parameters

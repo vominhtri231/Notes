@@ -1,6 +1,6 @@
-# Hashbang - shebang 
-Used to specify the program to run the script.
+# Hashbang - shebang
 
+Used to specify the program to run the script.
 
 Eg:
 

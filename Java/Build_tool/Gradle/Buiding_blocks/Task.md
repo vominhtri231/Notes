@@ -8,7 +8,7 @@ By default with the task would have type `DefaultTask`. To specify the task type
 
 They are configured inside the task block and will be executed any task actions - should be used to setting up configuration required for projects/tasks.
 
-Keep in mind that configuration is executed for every build, even if with `gradle tasks`.
+Keep in mind that **configuration is executed for every build**, even if with `gradle tasks`.
 
 ```groovy
 task abc {
@@ -43,7 +43,7 @@ Declare task's dependencies by:
 
 Note that this only defined the task's dependencies, not execute order of those dependencies.
 
-## Finalizer
+## Finalizers
 
 Declare task's finalizers as **clean up** tasks by method `finalizedBy`
 

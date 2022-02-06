@@ -9,7 +9,7 @@ Eg: the task `clean<TaskName>` is defined by Gradle for cleaning a task's output
 To create a task rule, you must get the TaskContainer under the `tasks` variable and using its `addRule(String, Closure)` method.
 
 ```groovy
-tasks.addRule('Pattern: log<Task> .... ' , { taskName ->
+tasks.addRule('Log-tasks' , { taskName ->
   if(taskName.startWith("log")) {  // checking task name
      task(taskName) {  // dynamically create task
         // task declaration here

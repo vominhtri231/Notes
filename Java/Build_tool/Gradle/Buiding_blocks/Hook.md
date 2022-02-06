@@ -30,7 +30,8 @@ Advantages of listener implementation over closure is that you could reuse it an
 You have to create an implementation of the wanted hook and add it.
 
 ```groovy
-class AListener implements TaskExecutionGraphListener { // the listener get called after the task graph has been populated
+class AListener implements TaskExecutionGraphListener { 
+  // the listener get called after the task graph has been populated
     @Override
     void graphPopulated(TaskExecutionGraph taskGraph) {
         ...

@@ -10,7 +10,7 @@ An array can be used to store heap: Element at index i will have parent at `(i-1
 
 Example:
 
-```
+```txt
       6
     /   \
    4     5

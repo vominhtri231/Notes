@@ -1,4 +1,3 @@
-
 # Predix radix tree
 
 ## Definition
@@ -7,7 +6,7 @@ Prefix tree (Trie) and radix tree are used to saved arrays or strings, make sear
 
 * A prefix tree (or a trie) is a binary tree where each letter is saved in a node.  
 
-```
+```txt
       ()
     /    \
    J      M
@@ -21,7 +20,7 @@ Prefix tree (Trie) and radix tree are used to saved arrays or strings, make sear
 
 * A radix tree is the compressed form of prefix tree. It saves the common letters in one node.
 
-```
+```txt
      ()
     /  \
    J   MAX

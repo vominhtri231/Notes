@@ -16,6 +16,12 @@ echo "hello world" > hello.txt
 ```
 
 * `>>` : specify the output stream, but will append the stream only
+* `<<<` : specify the input stream, typically using string
+
+```sh
+readarray -t a_array <<< "a sample string"
+```
+
 * `|` : use the last program result as the input for the next program
 
 ```sh

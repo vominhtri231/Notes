@@ -13,7 +13,7 @@ systemctl restart service-name
 
 systemctl reload service-name # Reload the configurations
 
-sytemctl enable service-name # Start service automatically at startup
+systemctl enable service-name # Start service automatically at startup
 
 systemctl disable service-name
 

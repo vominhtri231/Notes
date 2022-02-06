@@ -16,3 +16,12 @@ find . -path '**/src/.java' -type f
 find . -name '*.tmp' -exec rm {} \;
 find . -name '*.tmp' -delete
 ```
+
+## Useful flag
+
+* `-path` : specify the path
+* `-name`: specify the name
+* `-type`: specify the type (d - directory, f - file)
+* `-maxdepth`: specify the maximum depth
+* `-mindepth`: specify the minimum depth
+* `-not`: reverse the condition
