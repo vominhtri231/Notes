@@ -1,6 +1,6 @@
 # Spring retry
 
-## Prequisition
+## Prerequisite
 
 For using spring retry, project must:
 

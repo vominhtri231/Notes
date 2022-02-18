@@ -12,4 +12,4 @@ The tables/indexes are grouped together because they have shared similar columns
 3. Single table hash cluster
 4. Sorted hash cluster
 
-![](https://docs.oracle.com/cd/B28359_01/server.111/b28310/img/admin021.gif)
+![cluster](https://docs.oracle.com/cd/B28359_01/server.111/b28310/img/admin021.gif)
