@@ -1,12 +1,12 @@
 # Environment variable
 
-Jenkin environment variable is a global variable than can be accessed via `env` anywhere in the Jenkin file.  
+Jenkins environment variable is a global variable than can be accessed via `env` anywhere in the Jenkins file.  
 
 The `env` variable save data as key-value form, as value is String.
 
 ## List all environment variables
 
-1. File `${YOUR_JENKINS_HOST}/env-vars.html` contains all environment variables
+1. File `${YOUR_JENKINS_HOST}/env-vars.html` contains all predefined environment variables
 2. Via `printenv` shell command
 
 ``` groovy
