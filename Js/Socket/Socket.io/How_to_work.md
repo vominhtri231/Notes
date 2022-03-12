@@ -4,7 +4,7 @@
 
 Socket io is event base. Some pre-define event: connection, disconnect.
 
-## To handle an event
+## To listen to an event
 
 ```js
   socket.on('event', (obj) => {

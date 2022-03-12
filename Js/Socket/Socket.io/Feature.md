@@ -1,5 +1,7 @@
 # Features
 
+Some outstanding features of Socket.io:
+
 ## Multiplexing
 
 The ability to send multiple signals via a single complex signal.  
