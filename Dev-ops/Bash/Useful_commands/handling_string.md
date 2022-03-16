@@ -24,6 +24,13 @@ sed 's/{{find}}/{{replace}}/g' # do replacement until there is no matches
 sed '/{{line-pattern}}/d'
 ```
 
+* Get matching groups regex
+
+```sh
+sed -r 's/^.*between (\S*) and (\S*) .*$/\1 \2/'
+# example "anything between a and b" -> "a b"
+```
+
 ## wc
 
 The command for counting lines, words, bytes, etc.  

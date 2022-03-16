@@ -16,7 +16,7 @@ echo "hello world" > hello.txt
 ```
 
 * `>>` : specify the output stream, but will append the stream only
-* `<<<` : specify the input stream, typically using string
+* `<<<` : using string as input stream
 
 ```sh
 readarray -t a_array <<< "a sample string"
