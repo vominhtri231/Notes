@@ -6,29 +6,34 @@ The command for edit the stream
 
 ### Useful flags
 
-* --regexp-extended, -E : use extended regular expression, which more modern
+* --regexp-extended, -E, -r : use extended regular expression, which is more modern
+* -e: for specify the expression, usually can be omit, but can be useful if there are emultiple expressions
+
+```sh
+sed -e '/^[^*]/d' -e 's/*  \(.*\)/(\1)/'
+```
+
 * --in-place[=SUFFIX] , -i[SUFFIX]: edit file in place, makes backup if suffix is supplied
 
-### Examples
+### Useful expressions
 
-* Replace string
+* Replace `s`
 
 ```sh
 sed 's/{{find}}/{{replace}}/' # do replacement once
 sed 's/{{find}}/{{replace}}/g' # do replacement until there is no matches
+sed 's/{{find}}/{{replace}}/2' # do replacement for the second match only
+sed 's/{{find}}/{{replace}}/2g' # do replacement from the second match
+
+# Eg:  "anything between a and b" -> "a b"
+sed 's/^.*between (.*) and (\.*) .*$/\1 \2/'
 ```
 
-* Delete line match regular expression
+* Delete `d`
 
 ```sh
-sed '/{{line-pattern}}/d'
-```
-
-* Get matching groups regex
-
-```sh
-sed -r 's/^.*between (\S*) and (\S*) .*$/\1 \2/'
-# example "anything between a and b" -> "a b"
+sed '/{{line-pattern}}/d' # delete the line pattern
+sed '3d' # delete the 3rd line
 ```
 
 ## wc
