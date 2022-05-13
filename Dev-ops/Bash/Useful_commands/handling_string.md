@@ -29,7 +29,7 @@ sed 's/{{find}}/{{replace}}/2g' # do replacement from the second match
 sed 's/^.*between (.*) and (\.*) .*$/\1 \2/'
 ```
 
-* Delete `d`
+* Delete `d:`
 
 ```sh
 sed '/{{line-pattern}}/d' # delete the line pattern
