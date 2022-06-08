@@ -64,11 +64,24 @@ kubectl rollout restart deployment <deployment-name>
 
 ```sh
 kubectl logs <pod-id>
+kubectl logs -f <pod-id> # for live log
+kubectl logs <pod-id> --previous # for log in ended pod
 kubectl exec -it <pod-id> -- <path-to-executable>
 
 kubectl logs nginx-depl-12345-678
 kubectl exec -it nginx-depl-12345-678 -- /bin/sh
 ```
+
+## Copy file from/to pod
+
+```sh
+kubectl cp <file-src> <file-dest>
+
+kubectl cp <namespace>/<pod>:<path-in-pod> <path-local>
+kubectl cp <path-local> <namespace>/<pod>:<path-in-pod>
+```
+
+Note: should copy from the working dir in the pod
 
 ## Apply configuration file
 

@@ -52,3 +52,14 @@ The different is statefulSets are used for stateful application like databases. 
 The service will function as a load balancer aside from their communication purpose.
 
 ![deployment-statefulSet](./img/deployment-statefulSet.jpg)
+
+## DeamonSet
+
+DeamonSet just like deployment but ensures that all nodes run a copy of a pre-defined pod.
+
+=> As nodes are added to the cluster, pods are added. As nodes are removed from the cluster, pods are garbaged collected.
+
+It is used for: 
+
+- logging
+- node monitoring
