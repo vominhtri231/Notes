@@ -44,6 +44,13 @@ kubectl delete <resource-type> <name>
 kubectl delete deployment nginx-depl
 ```
 
+### Apply configuration file
+
+```sh
+kubectl apply -f <yaml-file>
+kubectl delete -f <yaml-file>
+```
+
 ## Handle pod
 
 ### Scale
@@ -82,10 +89,3 @@ kubectl cp <path-local> <namespace>/<pod>:<path-in-pod>
 ```
 
 Note: should copy from the working dir in the pod
-
-## Apply configuration file
-
-```sh
-kubectl apply -f <yaml-file>
-kubectl delete -f <yaml-file>
-```
