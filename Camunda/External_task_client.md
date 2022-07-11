@@ -1,6 +1,6 @@
 # External task client
 
-The camunda external task client allows user set up remote service tasks. There is support for Java (both plain Java and Spring) and Javascript implementations.
+The camunda external task client allows user set up remote service tasks. There is support for Java (both plain Java and Spring), Javascript, Python, etc.
 
 ## How it communicates
 
