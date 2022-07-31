@@ -4,7 +4,9 @@
 
 Most ORM frameworks have the first-level cache, when the entities are loaded into persistent context. It is session-scoped, means once the session is closed, the cache is terminated. This is allow current session work with entity instances in isolation.
 
-The second-level cache in Hibernate is SessionFactory-scoped, which is shared between session created by the same session factory.
+The second-level cache in Hibernate is SessionFactory-scoped, which is shared between sessions created by the same session factory.
+
+This technich would help eliminate access cost to frequently access data, however it should only be used when read/write ratios of the cache content is high.
 
 ## Usage
 
