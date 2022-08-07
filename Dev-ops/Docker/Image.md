@@ -46,6 +46,7 @@ Some popular `Dockerfile` step:
 * `CMD [ <list-of-command-part> ]` - the default running command. 
   This is required and only the last one applied ( you can skip it if the base image already contains it )
 * `EXPOSE` - for exposing the port of the container (not the host)
+* `VOLUME <path>` - create the volume and mount it to the given path
 
 Best practices for writing `Dockerfile`:
 
