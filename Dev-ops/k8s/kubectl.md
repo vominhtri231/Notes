@@ -8,7 +8,10 @@ By default `kubectl` will execute in the defautl namespace, to execute on differ
 - Set context's namespace via:  
  `kubectl config set-context --current --namespace=<namespace>`
 
-## Handle resources
+## Handle resources in imperative style
+
+* To generate the yml file from the imperative stype command, use flag `-o yml`
+* To not apply the change but for observing the protential changes on the client side, use flag `--dry-run `; for server side (which will compare command with the server's resource ), use flag `--server-dry-run`
 
 ### Create
 
@@ -44,11 +47,30 @@ kubectl delete <resource-type> <name>
 kubectl delete deployment nginx-depl
 ```
 
-### Apply configuration file
+### Run
+
+Run a pod, this is useful when create a pod for debugging or troubleshouting
+
+```sh
+kubeclt run --image=nginx
+```
+
+## Handle resources in declarative style
+
+This required yaml files with predefined structure.
 
 ```sh
 kubectl apply -f <yaml-file>
+kubectl apply -f <folder>/
+kubectl apply -f https://abc/def.yaml
+
+# For specifing the differences between the server resources and the yaml file 
+kubectl diff -f <yaml-file>
+
+# For sepecifing the action explicitly for the resurce, this is not recommended for automation
 kubectl delete -f <yaml-file>
+kubectl create -f <yaml-file>
+kubectl update -f <yaml-file>
 ```
 
 ## Handle pod
@@ -79,7 +101,7 @@ kubectl logs nginx-depl-12345-678
 kubectl exec -it nginx-depl-12345-678 -- /bin/sh
 ```
 
-## Copy file from/to pod
+### Copy file from/to pod
 
 ```sh
 kubectl cp <file-src> <file-dest>
