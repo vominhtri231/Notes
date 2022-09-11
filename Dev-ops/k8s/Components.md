@@ -16,8 +16,11 @@ Data in config map or secret can be used as environment variables or properties 
 
 ## Volume
 
-Since K8s does not manage data persistence, if a pod crash and get recreated, all of its data will be lost => volumes are used to attack the storage (can be local or external) with the pod.  
-A volume can be a folder or a drive inside a the host or in a remote server. You have to define both the volume and mount paths for its usages.
+Since K8s does not manage data persistence, if a pod crash and get recreated, all of its data will be lost => volumes are used to attack the storage (can be local or external) with the pod, they also be used to shared data between pods.  
+
+A volume can be a folder or a drive inside a the host or in a remote server.
+
+Volume's lifecircle bind to pod's lifecircle, so if the pod is restarted, it will be also restarted. PersistentVolume is used for store data that outlast the pod's life. Their lifecircle bind to the cluster's lifecircle.
 
 ```yml
 spec:
@@ -27,7 +30,7 @@ spec:
     volumeMounts:
     - mountPath: /path
       name: test-volume
-  volumes:
+  volumes: # create the pod volume
   - name: test-volume
 ```
 

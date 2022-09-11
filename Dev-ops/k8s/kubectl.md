@@ -2,10 +2,14 @@
 
 ## Namespace
 
+A namespace in k8s is a way to organize the cluster to multiple parts.
+
+Kubectl's context is the configuration for running the kubectl, including including namespace, authentication, cluster, etc.
+
 By default `kubectl` will execute in the defautl namespace, to execute on different namespace, we need to either:
 
 - Set specific namespace on each command via `-n <namespace>` flag.
-- Set context's namespace via:  
+- Set current context's namespace via:  
  `kubectl config set-context --current --namespace=<namespace>`
 
 ## Handle resources in imperative style

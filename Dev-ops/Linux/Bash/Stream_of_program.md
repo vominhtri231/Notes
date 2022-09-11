@@ -27,3 +27,7 @@ readarray -t a_array <<< "a sample string"
 ```sh
 ls -l | tail -n1
 ```
+
+**NOTE:** Redirection (`<`, `>>`, `>`, `2>`) is execute before the main command is run.
+
+E.g: `sudo echo "hello word" > hello.txt`. If the `hello.txt` file require special permission, the command sudo here will take no effect since the `hello.txt` will be open first. The echo command is also not execute at all.
