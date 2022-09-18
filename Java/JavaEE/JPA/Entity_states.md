@@ -1,6 +1,6 @@
 # Entity states
 
-![entity states diagram](https://cdn.jstobigdata.com/wp-content/uploads/2019/08/Entity-instance-states.png)
+![entity states diagram](./images/entity-states.png)
 
 1. New (Transition) state  
    An object is newly created and never been associated with Persistent context(Hibernate session) is in the New state.

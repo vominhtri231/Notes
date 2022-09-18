@@ -32,11 +32,12 @@ public Set<CustomerOrder> getOrders() { return orders; }
 As the JPA specification, you need to implement the equals() and hashCode() for:
 
 * Composite primary key
-* one-to-many and many-to-many association when using different type of collection like Set or Map
+* one-to-many and many-to-many association when using collection type like Set or Map
 
 ### How
 
-* When declaring hashCode() and equals() for entities, it is advised to prefer business key or natural key over generated key. (The entity should be unique by these attributes).  
+* When declaring hashCode() and equals() for entities, it is advised to prefer business key or natural key over generated key.
+(The entity should be unique by these attributes).  
 * The hash code of entities is not allow to change after added to Set or Map - so consider returning a fixed value if using generated key.  
 
 ## Multiple attributes primary key
