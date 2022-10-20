@@ -1,6 +1,12 @@
 # Profile
 
-Any component can be specify for a profile
+Profile is the feature for declaring multiple applicaiton modes. 
+
+Each profile is associate with a `application-<profile>.yml` configration file.
+
+## Component for each profile
+
+Declare component for a specify profile
 
 ```java
 @Configuration
