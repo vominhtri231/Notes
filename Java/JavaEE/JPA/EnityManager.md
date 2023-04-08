@@ -1,7 +1,16 @@
 # Entity Manager
 
-Persistence context is a cache of entity instances. Entity manager is used to manage the entities in the persistence context. Each entity manager is associated with a persistent context. `EntityManager` defines methods to interact with the persistent context.  
-There are 2 types of entity manager:
+Persistence context is a cache of entity instances (the first level cache - which is can not be turned off).
+It remember all modifications and state changes made in a unit of work, enable dirty checking.
+So if the wanted object is already in the persistent context (loaded before) or no changes are made to the saving entity, no query will hit the DB at all.
+
+Entity manager is used to manage the entities in the persistence context. Each entity manager is associated with a persistent context. `EntityManager` defines methods to interact with the persistent context.  
+
+One the unit of work is done, all the modifications can be persisted, 
+or we can explicitly do that by calling `EntityManger#flush`.
+JPA providers usually would try to delay synchronizing changes to the DB as long as possible to enhance performance and prevent locks.
+
+In JPA terms, there are 2 types of entity manager:
 
 ## Container-Managed Entity Manager
 
@@ -14,12 +23,7 @@ EntityManager em;
 
 ## Application-Managed Entity Manager
 
-The persistence context is not propagated automatically (each entity manager will create a new, isolated persistent context) and the lifecycle of entity managers and the transaction are managed by the application itself.
-
-**NOTE:**
-
-* Container managed entity manager cannot be used if the transaction type is RESOURCE_LOCAL.
-* TOMCAT does not support JTA transaction out of the box, you could use standalone transaction manager such as Atomikos, JOTM, Bitronix, SimpleJTA, etc.
+The persistence context is not propagated automatically, each time an entity manager is created , it will create a new, isolated persistent context.
 
 ```java
 // Create entity manager factory
@@ -28,18 +32,14 @@ EntityManagerFactory emFactory = Persistence.createEntityManagerFactory("persist
 @PersistenceUnit
 EntityManagerFactory emFactory;
 
+// This also create the persistent context
 EntityManager entityManager = emFactory.createEntityManager();
 
-// To gain access to the transaction
-// For JTA transaction
-@Resource
-UserTransaction transaction;
 // For resource local transaction
 EntityTransaction transaction = entityManager.getTransaction();
 
-
 transaction.begin();
-// Work with the persistence context ...
+// the unit of work
 transaction.commit();
 // the object changes will be auto migrated at this point
 ```
