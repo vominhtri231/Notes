@@ -31,3 +31,21 @@ List<User> findFirstByOrderByAge()
 
 List<User> findTop3ByNameOrderByAge(String username)
 ```
+
+## Applied entity graph
+
+To use the entity graph:
+
+```java
+@Repository
+public interface GroupRepository extends CrudRepository<GroupInfo, String> {
+
+  // With the predefined entity graph `GroupInfo.withMember`
+  @EntityGraph(value = "GroupInfo.withMember", type = EntityGraphType.LOAD)
+  GroupInfo getByGroupName(String name);
+
+  // Without the predefied entity graph
+  @EntityGraph(attributePaths = {"members"})
+  GroupInfo getByName(String name)
+}
+```

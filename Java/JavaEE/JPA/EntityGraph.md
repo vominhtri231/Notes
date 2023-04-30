@@ -1,6 +1,6 @@
 # Entity graph
 
-For those lazy init fields, to provide a hint for JPA to load those fields, we could use entity graph.
+To provide which fields to load dynamically instead of the defautl fetch plain in entity, we could use entity graph.
 
 ## Declaration 
 
@@ -28,23 +28,20 @@ public class GroupInfo {
 }
 ```
 
-## Usage
-
-To use the entity graph:
+Or we can create entity graph programatically.
 
 ```java
-@Repository
-public interface GroupRepository extends CrudRepository<GroupInfo, String> {
-
-  @EntityGraph(value = "GroupInfo.withMember", type = EntityGraphType.LOAD)
-  GroupInfo getByGroupName(String name);
-
-}
+EntityGraph<Post> entityGraph  = entityManager.createEntityGraph(GroupInfo.class);
+entityGraph.addAttributeNodes("members");
 ```
 
-Under the hood, JPA would pass the entity graph as a hint 
+## Usage
+
+JPA uses entity graph as a hint 
 ```java
-query.setHint("javax.persistence.fetchgraph", entityGraph)
+entityManager
+  .createQuery("...")
+  .setHint("javax.persistence.fetchgraph", entityGraph)
 ```
 
 ## Category

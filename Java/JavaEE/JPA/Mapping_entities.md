@@ -17,11 +17,11 @@ The entity class must obey Java Bean Standard:
 
 ## Cascade operations
 
-Specify if the parent entity performs some actions the associate entities will apply the same action.  
+When the parent entity performs some actions, cascade options specify whether the associate entities will perform the same action or not.  
 Cascade options are: `DETACH`, `MERGE`, `PERSIST`, `REFRESH`, `REMOVE` , `ALL` (propagate all actions)
 
 ```java
-@OneToMany(cascade=REMOVE, mappedBy="customer")
+@OneToMany(cascade={REMOVE, PERSIST}, mappedBy="customer")
 public Set<CustomerOrder> getOrders() { return orders; }
 ```
 
@@ -32,7 +32,7 @@ public Set<CustomerOrder> getOrders() { return orders; }
 As the JPA specification, you need to implement the equals() and hashCode() for:
 
 * Composite primary key
-* one-to-many and many-to-many association when using collection type like Set or Map
+* one-to-many and many-to-many associations using collection type like Set or Map
 
 ### How
 

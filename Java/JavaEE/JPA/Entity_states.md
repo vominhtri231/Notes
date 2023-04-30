@@ -8,13 +8,21 @@ It's the application's job to call the Java Persistent API for loading or storin
 
 1. New (Transition) state  
    An object is newly created and never been associated with a Persistent context is in the New or Transition state.
+
    To move an object from the transition state to Persistent state, we can call `EntityMagager#persist`
+
 2. Persistent (Managed) state  
    An object is associated with persistent context is in Persistent state.  
    Any changes made toward objects in this state are automatically propagated to context. At the end of the unit of work, all the changes will be commited.
+
    Beside `EntityManager#persist` or `EntityManager#merge`, an object getting from query, find reference or travelling persistent objected is also persistent.
+
 3. Detached (un-managed) state  
-   An entity object becomes detached once the currently running session is closed, and its data state is becomming stale. We can explixitly do that by `EntityManger#detach` to detach one entity or `EntityManager#close` to detach every single entities in the persistent context. Sometimes, this action is needed to prevent the persistent context from out of memory.
-   To synchronize the changes of detached or new object, using `EntityManager#merge`.
+   An entity object that no longer managed by the persistent context is in detached state and its data state is becomming stale. 
+
+   We can explixitly do that by `EntityManger#detach` to detach one entity or `EntityManager#close` to detach every single entities in the persistent context. Sometimes, this action is needed to prevent the persistent context from out of memory. Closing the running persistent context would effectively detach all its managed entities.
+
+   To synchronize the changes of detached or new object, using `EntityManager#merge`, which will create a entity instance by merging the loaded entity (the ORM provider would look for the entity with the identifier in the persistent context first, if it does not exist then loaded it from the db) with the input entity.
+
 4. Removed state  
    Associated with the persistent context but are scheduled for removal from the data store after unit of work end.
