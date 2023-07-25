@@ -1,8 +1,10 @@
 # Data structure
 
-![logical-db](./img/logical_physical_dbs.jpg)
+![db-structure](./img/logical_physical_dbs.jpg)
 
-## Block
+## Logical database structure
+
+### Block
 
 ![db-block](./img/database_block.png)
 
@@ -12,13 +14,16 @@ table information (the table(s) the block saving the data for).
 Data in a block is saved with space between them. You could use PCTFREE/PCTUSE to specify the space size. 
 The more space means higher performance when editing a row but more spatial cost and vice versa.
 
-## Extent
+### Extent
 
-## Segment
+### Segment
 
-There are 4 types of segments: Data, Index, Undo and Temporary. Temporary segment provides temporary work area.
+There are 4 types of segments: Data, Index, Undo (Rollback) and Temporary. 
 
-## Tablespace
+- Temporary segments provide temporary work area.
+- Undo and Rollback segments are quite the same. If Oracle creates and manages them via Auto Undo Management (AUM), they are call Undo segments, or else Rollback segments
+
+### Tablespace
 
 Used to group all related data in one container. There are 2 types of tablespace:
 
@@ -27,8 +32,14 @@ Used to group all related data in one container. There are 2 types of tablespace
 
 Each database must have at least 2 tablespaces: SYSTEM and SYSAUX.
 
-## User vs Schema
+We can also handle undo by creating undo tablespaces instead of using undo/rollback segments.
+
+### User vs Schema
 
 * In oracle, a schema is a collection of database objects own by a user. __A user owns a schema and have the same name__.
 * The `CREATE USER` command creates user and a schema for that user. As well as `DROP USER` will delete both user and schema.
 * the `CREATE SCHEMA` command __does not create a `schema`__ as it implies.
+
+## Physical database structure
+
+Oracle stores data physcically in datafiles that associated with the corresponding tablespaces. A tablespace can consist of 1 or multiple datafiles.
