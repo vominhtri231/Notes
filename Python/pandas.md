@@ -23,10 +23,10 @@ for row in df.itertuples():
 2. Appending to dataframe
 
 Using `#concat()` for appending row to the existing dataframe is extremely slow. 
-Try using vectorized solution, if not possible, append to a list then create the dataframe from it would be more efficient.
+Try appending to a list then create the dataframe from it would be more efficient.
 
 ```python
-new_df = new pd.DataFrame()
+new_df = pd.DataFrame()
 for row in df.itertuples():
   row = pd.DataFrame({"name": [row.name]})
   new_df = pd.concat([new_df, row], ignore_index=True)
@@ -37,10 +37,10 @@ new_list = []
 for row in df.itertuples():
   row = {"name": [row.name]}
   new_list.append(row)
-new_df = new pd.DataFrame(new_list)
+new_df = pd.DataFrame(new_list)
 ```
 
-3. Using `#apply()`
+1. Using `#apply()`
 
 The `#apply()` method is just a fancier looping in pandas, which is quite slow and should be avoided.
 
@@ -48,4 +48,13 @@ The pandas column would return a NumPy's series, which we can apply Numpy operat
 
 ```python
 df['Category'] = np.where(df['Age'] < 60,  'Elder', 'Young')
+```
+
+```python
+# sales and profit are Numpy's series
+def _conditions2(sales, profit):
+  pass
+
+func = np.vectorize(_conditions2)
+df["rank"] = func(sales, profit)
 ```
