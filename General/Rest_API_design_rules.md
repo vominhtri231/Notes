@@ -7,11 +7,21 @@
 |/dogs|Create new dog|List all dogs| Bulk update| |Delete all dogs|
 |/dogs/23|  | Show A | Updating A | Partially update A |Delete A|
 
-If the action don't fit into methods, consider:
+**If the action don't fit into methods, consider**:
 
 * Treat it like a resource, like what Github does with star action [link](https://docs.github.com/en/rest/reference/gists#star-a-gist)
 * Restructure the action to appear like a field of resource. Eg: `activate` action could be mapped to `active` field and update via a PATH
 * For some cases, where there are no sensible way to map the action. Eg: Search for multiple resource should using the endpoint `/search` even though it is not a resource
+
+**PUT vs POST**
+
+In practice, they can both use to update and create resources and we do not need to support both PUT and POST.
+
+PUT method is defined to be idempotent, meaning that if we execute a POST method multiple times, all the executions should have no additional effects.  
+=> You can update or create a new resource with the same url `PUT /resourceNames/<id>`. 
+This also means you must know the resource before PUT calls.
+
+For POST, we must use `POST /resourceNames` for creating a resource and `POST /resourceNames/<id>` for updating.
 
 ## Relation of resource
 
