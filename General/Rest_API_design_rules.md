@@ -2,10 +2,10 @@
 
 ## Method - action mapping
 
-|Resource | Post | Get | Put | Path | Delete|
-|---|---|---|---|---| --- |
-|/dogs|Create new dog|List all dogs| Bulk update| |Delete all dogs|
-|/dogs/23|  | Show A | Updating A | Partially update A |Delete A|
+| Resource | Post           | Get           | Put         | Path               | Delete          |
+| -------- | -------------- | ------------- | ----------- | ------------------ | --------------- |
+| /dogs    | Create new dog | List all dogs | Bulk update |                    | Delete all dogs |
+| /dogs/23 |                | Show A        | Updating A  | Partially update A | Delete A        |
 
 **If the action don't fit into methods, consider**:
 
@@ -31,7 +31,7 @@ If a relation can only exist within the resource:
 * POST tickets/12/messages : create message of ticket 12
 * GET tickets/12/messages/5 : get message id 5 of ticket 12
 * PUT tickets/12/messages/5 : get update message id 5 of ticket 12
-, etc
+  , etc
 
 If a relation can exist independently form the resource, consider returning their id within the resource. The consumer will later call relation endpoint.
 
@@ -41,7 +41,7 @@ Eg: GET `/tickets/12?embed=customer.name,assigned_user`
 
 This will get the customer name and assigned user along with the ticket
 
-``` json
+```json
 {
   "id" : 12,
   "subject" : "I have a question!",
@@ -66,16 +66,19 @@ This will get the customer name and assigned user along with the ticket
 To keep the base resource API lean, filtering, sorting and searching should put as query parameters
 
 * Filtering: Use unique field parameter for each field that implement filtering
- Eg: `GET /tickets?state=open` - retrieving open ticket
+  Eg: `GET /tickets?state=open` - retrieving open ticket
+
 * Sorting: Allow sort parameter to take in list of fields, with negative unary to imply descending order
- Eg: `GET /tickets?sort=-priority,created_at` - retrieving ticket, sort by priority descending and then by created date
+  Eg: `GET /tickets?sort=-priority,created_at` - retrieving ticket, sort by priority descending and then by created date
+
 * Searching: When you need a full text search for a specific type of resource
- Eg: `GET /tickets?q=abc` - retrieving tickets that mention the word `abc`
+  Eg: `GET /tickets?q=abc` - retrieving tickets that mention the word `abc`
+
 * API consumer doesn't always need the full representation of the resource, the ability to select fields would minimize network traffic.
- Eg: `GET /ticket?field=id,subject`
+  Eg: `GET /ticket?field=id,subject`
 
 * To make the API more pleasant to use, you could create alias for common queries.
- Eg: `GET /tickets/recently_closed` for getting recently closed tickets.
+  Eg: `GET /tickets/recently_closed` for getting recently closed tickets.
 
 ## HATEOAS - Hypermedia as the Engine of Application State
 
@@ -114,7 +117,7 @@ Pagination-Limit: 20
 Common rule: avoid using BASE64 encode binary content in JSON request as possible. Instead, using:
 
 1. Direct file upload  
-Using Content-Type for setting proper content.
+   Using Content-Type for setting proper content.
 
 ```http
 PUT /profile/1234/image HTTP/1.1
@@ -125,7 +128,7 @@ raw image content
 ```
 
 2. Multipart Http request  
-If the request support multiple files or associate data
+   If the request support multiple files or associate data
 
 ```http
 POST /profile/1234/images HTTP/1.1
@@ -143,8 +146,9 @@ Content-Disposition: form-data; name="category"
 my-category
 --MultipartBoundry
 ```
+
 3. 2 step metadata - upload   
-First, a request for metadata is called, return a link for uploading => prevent single transaction wrapper
+   First, a request for metadata is called, return a link for uploading => prevent single transaction wrapper
 
 ## Rate limiting
 
@@ -191,10 +195,13 @@ Reusing standard HTTP code if possible:
 -- success
 
 * 200 : ok
+
 * 201 : created - response to a POST that results in a creation, should be combined with a Location header
+
 * 204 : no content - successful request that won't return anything in the body
 
 * 302 : attempt to redirect the page
+
 * 304 : not modified - use cached data
 
 -- client issues
