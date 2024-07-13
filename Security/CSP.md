@@ -19,11 +19,11 @@ Each directive in CSP header define types of resource. If there are multiple dir
 
 It is used to defined how the resource is allowed. Some of them are:
 
-| Source value | Description|
-| --- | --- |
-| `*` | Allowed any URL |
-| `'none'` | Prevents loading resources |
-| `'self'` | Allows resources from the same origin |
-| `domain.example.com` | Allow resources from a specific domain |
-| `*.example.com` | Allow resource from any sub domain |
+| Source value         | Description                                 |
+| -------------------- | ------------------------------------------- |
+| `*`                  | Allowed any URL                             |
+| `'none'`             | Prevents loading resources                  |
+| `'self'`             | Allows resources from the same origin       |
+| `domain.example.com` | Allow resources from a specific domain      |
+| `*.example.com`      | Allow resource from any sub domain          |
 | `http://example.com` | Allow resource from a domain and over HTTPS |

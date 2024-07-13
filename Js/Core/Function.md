@@ -60,4 +60,4 @@ var objectA = {
 getValue.apply(objectA);
 ```
 
-### Contructor invocation
+### Constructor invocation

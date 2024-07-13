@@ -10,7 +10,7 @@ By default `kubectl` will execute in the defautl namespace, to execute on differ
 
 - Set specific namespace on each command via `-n <namespace>` flag.
 - Set current context's namespace via:  
- `kubectl config set-context --current --namespace=<namespace>`
+  `kubectl config set-context --current --namespace=<namespace>`
 
 ## Handle resources in imperative style
 

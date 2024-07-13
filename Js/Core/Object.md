@@ -2,8 +2,6 @@
 
 ## Type in JS
 
-
-
 There are 6 types in JS: `string`, `number` , `boolean` , `object` , undefined and null.
 
 `string`, `number`, `boolean` are object types that are immutable.
@@ -41,7 +39,6 @@ To add a property
 ```js
 student.grade = 7
 student['phone-number'] = 333444555
-
 ```
 
 To enumerate object's properties, we can use `for in` syntax. Notice that property can in any order.

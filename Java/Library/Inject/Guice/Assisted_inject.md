@@ -1,8 +1,11 @@
 ## Intro
+
 The technique that allow injection in only some fields but not all.
 
 ## How to
+
 Use `@Assisted` to indicate a field's value come from an argument, not injected. The value is later passed to by a Factory.
+
 ```java
 class Car {
     @Inject
@@ -23,6 +26,7 @@ install(new FactoryModuleBuilder()
 ```
 
 In call side:
+
 ```java
 @Inject
 CarFactory carFactory;
@@ -30,11 +34,13 @@ carfactory.createCar(6);
 ```
 
 ## Remarks
+
 * If the assisted fields have the same type, you could specify the name. Eg:
-```java
+  
+  ```java
     @Inject
     public Car(final Engine engine, @Assisted("sits") final int sits,
               @Assisted("windows") final int windows){
         // initialize a car
     }
-```
+  ```

@@ -11,7 +11,7 @@ To tell the authorization server that the request is OpenID, simply add scope `o
 The OpenId is built on top of OAuth and added:
 
 * ID token  
- When user change the authentication code, they would get the ID token along with the access token.  
- The ID token's format is JWT.
+  When user change the authentication code, they would get the ID token along with the access token.  
+  The ID token's format is JWT.
 * User info endpoint
 * Standard set of scopes

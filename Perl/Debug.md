@@ -1,4 +1,4 @@
-# Debug 
+# Debug
 
 To debug in perl script, we use the option `-d` when running it. Note that we can only step into another perl script, not the system call.
 

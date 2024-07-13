@@ -27,5 +27,3 @@ The registried extension can be accessed via `IExtensionRegistry` or `Platform.g
 Platform.getExtensionRegistry().
     getConfigurationElementsFor("extension-id");
 ```
-
-

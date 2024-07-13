@@ -8,7 +8,7 @@ In Python functions are first class objects, means that they can be:
 
 - Passed as arguments
 
-```python 
+```python
 def shout(text):
   return text.upper()
 
@@ -38,13 +38,13 @@ Decorator will wrap the given function:
 
 ```python
 def calculate_time(func):
-     
+
     def wrapper(*args, **kwargs):
         begin = time.time()
         func(*args, **kwargs)
         end = time.time()
         print("Total time taken in : ", func.__name__, end - begin)
- 
+
     return wrapper
 
 @calculate_time()

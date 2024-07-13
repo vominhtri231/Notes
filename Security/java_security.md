@@ -1,6 +1,5 @@
 # Java security
 
-
 ## Keystore vs truststore
 
 Keystore holds key of your application which can later use to prove integrity of the messages.
@@ -22,4 +21,4 @@ SSL certificates sometimes are referred to as "public keys" or "end entity" cert
 ![](./img/chain_of_trust.jpg)
 
 A certificate authority is the one that issues the digital certificates.
-It can act as a 3rd party that can guarantee a cerificate is really what it said.
+It can act as a 3rd party that can guarantee a certificate is really what it said.

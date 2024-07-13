@@ -1,10 +1,8 @@
-# Pandas
+# Common pitfalls
 
-Pandas is the library for manipulating, visualize, loading and saving data.
+# 
 
-## Common pitfalls
-
-1. Iterating in pandas
+### Iterating in pandas
 
 Iterating in pandas (including using `#apply()` method, which is just a fancier looping) is extremely slow, consider:
 
@@ -20,27 +18,29 @@ for row in df.itertuples():
   name = getattr(row, 'Name')
 ```
 
-2. Appending to dataframe
+### Appending to `Dataframe`
 
-Using `#concat()` for appending row to the existing dataframe is extremely slow. 
-Try appending to a list then create the dataframe from it would be more efficient.
+Using `#concat()` for appending row to the existing `Dataframe` is extremely slow. 
+Try appending to a list then create the `Dataframe` from it would be more efficient.
 
 ```python
 new_df = pd.DataFrame()
 for row in df.itertuples():
-  row = pd.DataFrame({"name": [row.name]})
+  row = pd.DataFrame({"name": [row.name], "age": [row.age]})
   new_df = pd.concat([new_df, row], ignore_index=True)
 ```
 
 ```python
 new_list = []
 for row in df.itertuples():
-  row = {"name": [row.name]}
+  row = [row.name, row.age]
   new_list.append(row)
-new_df = pd.DataFrame(new_list)
+new_df = pd.DataFrame(new_list, columns=["name", "age"])
 ```
 
-1. Using `#apply()`
+ 
+
+### Using `#apply()`
 
 The `#apply()` method is just a fancier looping in pandas, which is quite slow and should be avoided.
 

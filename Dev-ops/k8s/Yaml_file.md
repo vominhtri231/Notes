@@ -4,13 +4,12 @@
 
 A k8s yaml files includes 4 mandatory key-values pairs:
 
- * kind
- * apiVersion
- * metadata - only resource name is required
- * spec - specify the properties of the resource
+* kind
+* apiVersion
+* metadata - only resource name is required
+* spec - specify the properties of the resource
 
-
-## Getting the supported api resources 
+## Getting the supported api resources
 
 A k8s cluster can be extended depends on the provider so it can have different type of resources. To get all api resources that the cluster support:
 
@@ -19,7 +18,6 @@ kubectl api-resources
 ```
 
 ![](./img/api-resources.png)
-
 
 ## Getting the key's documentation
 

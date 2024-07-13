@@ -11,11 +11,11 @@
 * Back channel: the highly secure channel that we could control (Eg: our backend server) 
 * Frond channel: the less secure channel that could be interfered(Eg: browser)
 * Access token (or bearer token): the token that we could use to get the resource.  
- Each token has a scope indicate which resource could be gained by the token.
+  Each token has a scope indicate which resource could be gained by the token.
 
 ## Example of a authorization request:
 
-```http request
+```http
 https://authorization-server.com/oauth/authorize
 ?client_id=a17c21ed
 &response_type=code
