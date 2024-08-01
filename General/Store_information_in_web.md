@@ -32,7 +32,7 @@ document.cookie
 Cookies that match domain of the current side, i.e, what displayed in the browser's address bar are referred as first-party cookies. Cookies that don't match domain of the current side is called third-party cookies. This lead to various problems like CSRF, request overhead, track user activity across multiple sites, etc.
 
 ### Some cookie's attributes
-  
+
 * domain - the domain it belongs. Cookie is private to the domain.
 * path - the path that it will be sent.
 * secure - the cookie only be sent via https.

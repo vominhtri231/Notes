@@ -1,7 +1,5 @@
 # Common pitfalls
 
-# 
-
 ### Iterating in pandas
 
 Iterating in pandas (including using `#apply()` method, which is just a fancier looping) is extremely slow, consider:
@@ -35,10 +33,8 @@ new_list = []
 for row in df.itertuples():
   row = [row.name, row.age]
   new_list.append(row)
-new_df = pd.DataFrame(new_list, columns=["name", "age"])
+new_df = pd.DataFrame(new_list, columns=["name", "age"]) 
 ```
-
- 
 
 ### Using `#apply()`
 

@@ -1,19 +1,25 @@
-### Basic model
+# Authenticate
 
-![](https://miro.medium.com/max/1050/1*Uz3bHpisBBCeZAqX46BiKg.png)
+Authenticate is the process of identifying who is the client, which differ from authorization which is the process of identifying what are the client allowed to do.
+
+There are some popular authenticate models:
+
+## Basic model
+
+![](./img/authen_basic.png)
 Because the Http is stateless, server would required username/password everytime for authentication/authorization.
 
-### Server side session (SSS)
+## Server side session (SSS)
 
-![](https://miro.medium.com/max/1050/1*KOBd8XFcwhexNe_dZ7DEBw.png)
+![](./img/authen_server_side_session.png)
 
 * Server now save authenticate/authorize data in server session, that would prevent unnecessary authentication.
 
 * However, this also cause a problem when the system got scaled(which later required the session synchronization) and also security problem.
   
-  ### Json web token (JWT)
+  ## Json web token (JWT)
   
-  ![](https://miro.medium.com/max/1050/1*1efaAnWzyZzI15utuJ-xEg.png)
+  ![](./img/authen_jwt.png)
 
 * JWT is a token format. Each token is self-contained, containing sufficient data for checking its validity as well as user information.
 

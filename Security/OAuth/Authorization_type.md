@@ -2,7 +2,7 @@
 
 ## Authorization code (frond channel + back channel)
 
-![exchange-code-access-token](../img/exchange_code_access_token.jpg)
+![exchange-code-access-token](../img/exchange_code_access_token.jpg)`
 
 The parameter `response_type`=code in the request.
 
