@@ -1,4 +1,7 @@
+# Enum definition
+
 Enums are ***full-fledged class*** that expose instances via static final fields, they are:
+
 1. Instance-controlled - user can not create an instance of them at runtime
 2. Final - user can not extend them
 3. Implements all Object methods, Serializable, Comparable

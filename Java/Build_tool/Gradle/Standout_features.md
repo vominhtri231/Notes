@@ -7,7 +7,7 @@ If input and output are unchanged, the cache will be used. The task will be mark
 
 ## Wrapper
 
-This allow to run the build script consistently, without cares for gradle version nor operating system.
+This allow to run the build script consistently, without cares for Gradle version nor operating system.
 Wrapper is consider as Gradle best practice and the wrapper files should be checked to the version control.
 
 The wrapper files should be organized as below:
@@ -26,4 +26,4 @@ task wrapper(type: Wrapper) {
 |-gradlew.bat  // the file for executing gradle wrapper in WINDOW
 ```
 
-At the first run, the gradle will be downloaded and saved in `/user-home/.gradle/wrapper/dists`.
+At the first run, the Gradle will be downloaded and saved in `/user-home/.gradle/wrapper/dists`.

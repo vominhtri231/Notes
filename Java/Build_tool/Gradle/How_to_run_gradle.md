@@ -18,9 +18,9 @@ Some help task:
 Some useful parameters:
 
 * Logging options:
-  -i --info change log level to INFO;
-  -s --stacktrace print the stack trace when error;
-  -q --quite reduce the log messages
+  -i `--info` change log level to INFO;
+  -s `--stacktrace` print the stack trace when error;
+  -q `--quite` reduce the log messages
 * Others:
   -h -? --help for held menu
   -b --build for choosing different build file
@@ -28,10 +28,10 @@ Some useful parameters:
 
 ## Running phases
 
-Every gradle command run in 3 phases:
+Every Gradle command run in 3 phases:
 
 ```txt
 Initialize phase ----- > Configuration phase -----> Execution phase 
 ```
 
-In the initialize phase, Gradle will tried to find the settings file in upper level folders. If no settings files are found, the project is considered a single project. You could also set the settings file (using `-c` or `--setting-files`) or tell gradle not to search upward (using `-u` or `--no-search-upward`).
+In the initialize phase, Gradle will tried to find the settings file in upper level folders. If no settings files are found, the project is considered a single project. You could also set the settings file (using `-c` or `--setting-files`) or tell Gradle not to search upward (using `-u` or `--no-search-upward`).

@@ -13,7 +13,7 @@ An Arithmetic Expression can be express as:
 This is a algorithm for converting a infix notation to postfix notation. Here is its pseudo code:
 
 - Initialize a operator stack and a output queue
-- Foreach token, if token is
+- For each token, if token is
   - number: push to output queue
   - an operator: pop all operators from the operator stack that have the greater precedence than it into the output queue. Push the operator into the stack
   - Left parenthesis: push to the operator stack
