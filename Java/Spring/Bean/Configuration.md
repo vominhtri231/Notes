@@ -39,7 +39,6 @@ class Config {
 
 The `@SpringBootApplication` already contain the `@ComponentScan` with default value. However, the annotation is still helpful when including third-party beans.
 
-
 ### Discover entities or repositories
 
 To discover repository repos, we can use `@Enable...Repositories`, which can be `Jpa`, `Redis` repos, etc.
@@ -53,5 +52,4 @@ Same with `@ComponentScan`, by default they will look for entities and repos in 
 class Config {
    //...
 }
-
 ```

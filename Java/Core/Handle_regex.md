@@ -1,4 +1,6 @@
-# Matcher
+# # Handle regex
+
+## Matcher
 
 ```java
 Pattern pattern = Pattern.compile(regex);
@@ -12,12 +14,8 @@ while (matcher.find()) {
     matcher.group(0); 
 }
 
-// The group index is the number of open bracket(s)
-// Eg: With  regex: "(//d+) ([a-z])" 
-//    - group 0 is the whole message
-//    - group 1 is //d+
-//    - group 2 is [a-z]
-matcher.group(0); 
+// get group index 1
+matcher.group(1);
 
 // replace matched string
 matcher.replaceAll(replaceString);
