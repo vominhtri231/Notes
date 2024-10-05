@@ -13,6 +13,8 @@ Some well-known `dunder` methods:
 
 * `__new__`, `__init__`, `__del__` for instance creation and deletion
 
+* `__hash__` and `__eq__` for using objects in set/dictionary and override `=` operator
+
 * `__enter__`, `__exit__` for context management
 
 * `__call__` for emulates functions
@@ -27,4 +29,4 @@ Some well-known `dunder` methods:
 
 * `__len__`, `__getitem__`, `__setitem__`,`__delitem__`, `__contains__` for emulating collections
 
-* `__neg__` (-), `__pos__` (+), `__lt__` (>), etc for emulate operator
+* `__neg__` (-), `__pos__` (+), `__lt__` (>), etc for emulate operators
