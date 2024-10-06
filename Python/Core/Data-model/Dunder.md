@@ -4,10 +4,15 @@ Data model in python formalizes the interface of the building block of the langu
 
 For example, by implementing `__getitem(key)__` of a class, we support the syntax `obj[key]` on the class's instances.
 
-These special methods name is wrapped inside double underscore `__xyz__`, AKA `dunder` methods.  
-**Note**: Should not name a user defined method like `dunder` method, since the name may be used in the future release.
+These special methods name is wrapped inside double underscore `__xyz__`, AKA `dunder` methods.
 
-These methods should not be called by the program directly, except for the `__init__` method , to initialize the superclass in your own `__init__` implementation.
+## Noted:
+
+* Should not name a user defined method like `dunder` method, since the name may be used in the future release.
+
+* These methods should not be called by the program directly, except for the `__init__` method , to initialize the superclass in your own `__init__` implementation.
+
+## Examples
 
 Some well-known `dunder` methods:
 
@@ -29,4 +34,4 @@ Some well-known `dunder` methods:
 
 * `__len__`, `__getitem__`, `__setitem__`,`__delitem__`, `__contains__` for emulating collections
 
-* `__neg__` (-), `__pos__` (+), `__lt__` (>), etc for emulate operators
+* `__neg__` (-), `__radd__` (+), `__lt__` (>), etc for emulate operators

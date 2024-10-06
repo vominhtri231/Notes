@@ -51,7 +51,7 @@ This way, the program will consider the virtual subclass is a subclass of the AB
 
 ### Subclass hook
 
-In some cases, a ABC class may automatically check if a class is its subclass or not, via checking its API in `__subclasshook__` method.  This approach is actually chosen by the Go language. For example the Sized ABC class.
+In some cases, a ABC class may automatically check if a class is its subclass or not, via checking its API in `__subclasshook__` method.  This approach is actually chosen by the Go language. For example the Sized ABC class. 
 
 ```python
 @classmethod
@@ -96,5 +96,3 @@ To identify which method/attribute to use for a instance, Python would use the m
 A.__mro__
 # (<class '__main__.A'>, <class '__main__.B'>, <class '__main__.C'>, <class 'object'>)
 ```
-
-
