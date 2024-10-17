@@ -28,10 +28,10 @@ b = 3
 def f1():
     print(b)
     b = 4
-    
+
 def f2():
     d = 2
-    
+
     # Here b would have local scope,
     # even though it is defined before and should be a free variable
     # This would make print statement fail since d is not defined 
@@ -54,12 +54,10 @@ def f1():
 
 def f2():
     d = 2
-    
+
     # d is now a free variable
     def f1():
         nonlocal d
         print(d)
         d = 4
 ```
-
-

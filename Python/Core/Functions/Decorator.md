@@ -73,6 +73,21 @@ def fibo(n):
     return n
 ```
 
+### wraps
+
+When you create a decorator, wrapper function will obscure the original function's metadata such as name, docs, module, etc. The `functools.wraps` decorators help copy those metadata from the original function to the wrapper function
+
+```python
+def my_decorator(func):
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        print("Before the function is called.")
+        result = func(*args, **kwargs)
+        print("After the function is called.")
+        return result
+    return wrapper
+```
+
 ### singledispatch
 
 `functools.singledispatch` decorator is used to create different function implementation for each data type. (which is overloading in other languages). When the function is executed, the implementation would be chosen based on type of the **first argument**.
