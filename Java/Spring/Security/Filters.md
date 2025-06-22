@@ -22,7 +22,6 @@ Despite the fact that only one chain ever handles a request, you can have more
 precise control of authorization by setting additional matcher in the `HttpSecurity` configuration.
 
 ```java
-
 @Configuration
 @Order(SecurityProperties.BASIC_AUTH_ORDER - 10)
 public class ApplicationConfigurerAdapter extends WebSecurityConfigurerAdapter {

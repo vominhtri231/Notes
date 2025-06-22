@@ -47,5 +47,3 @@ Noted:
 * the `yield` must be wrapped inside a try/finally in order to make sure the after logic will get executed.
 
 * contrast to context manager object, the `@contextmanager` function will suppress the exception by default, in order to re-raised it, we must explicitly catch and re-raise it again.
-
-

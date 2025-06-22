@@ -17,7 +17,7 @@ class MammalConfiguration {
 
 Adding the annotation `@EnableAutoConfiguration` to the class or declaring a class under the key `EnableAutoConfiguration` of `META-INF/spring.factories` to indicate a configuration as enable-auto. This allows the configuration to be applied.
 
-**`@EnableAutoConfiguration` should only appear once**, there is no harm nor befifit from declaring multiple configuration with `@EnableAutoConfiguration`
+**`@EnableAutoConfiguration` should only appear once**, there is no harm nor benefic from declaring multiple configuration with `@EnableAutoConfiguration`
 
 The `@SpringBootApplication` already contain the `@EnableAutoConfiguration` so class that has the annotation is applied.
 

@@ -16,6 +16,7 @@ For more complex comparation like not equals, greater, less than, after, before 
 ## Nested property path
 
 For access the nested property path, we could use the underscore `_`
+
 ```java
 List<User> findByName_FirstName(String firstName);
 ```
