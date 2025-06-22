@@ -21,7 +21,7 @@ Then the query is checked if its execution plan exist in the shared SQL area and
    3. Plan Generator
       It will generate various paths for the query by trying different access paths, join methods and join orders.
 3. Generate row source:
-   Take the plan from the optimizer to an interative plan usable for the database.
+   Take the plan from the optimizer to an interactive plan usable for the database.
 
 The plan created by the optimizer is called __explain plan__. When the query is run, the actual running plan can be different. This is called __execution plan__ and will be saved in shared SQL area.
 
@@ -123,7 +123,7 @@ A join operation is done by a driving table (outer table) and a inner table. The
    This join is done by creating a hash table of the joinning key, then compare the hash value instead of the actual value=> Can only used in equijoin (join with equality operator). `USE_HASH(table1 table2)`
 4. Cartesian join  
    Join each row from one table to each row of another => mostly happen because of missing join condition or cross join.
-__Some additional information to join method: Outer join, Semi join, anti join__
+   __Some additional information to join method: Outer join, Semi join, anti join__
 
 ### Other operations
 

@@ -18,7 +18,7 @@ public class SpringAsyncConfig { ... }
 
 - Must be applied in public method
 - Self-invocation can not work. This can be solved by declaring an instance of the bean
-  
+
 ## Executor
 
 By default, `@Async` would use `SimpleAsyncTaskExecutor`, to change the executor implementation, you could either:
@@ -47,6 +47,6 @@ public class CustomAsyncExceptionHandler implements AsyncUncaughtExceptionHandle
     public void handleUncaughtException(Throwable throwable, Method method, Object... obj) {
        // ...
     }
-    
+
 }
 ```

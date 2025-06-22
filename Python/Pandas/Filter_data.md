@@ -23,19 +23,31 @@ Any series of bool values can be used to filter data frame's rows.
 
 * combine condition
 
-We can apply binary operation to bool series using `&` (and), `|` (or)  or `~` (not). **Note: parentheses would needed**
+We can apply binary operation to bool series using `&` (and), `|` (or)  or `~` (not), **parentheses would needed**
 
 ```python
 above_14_below_16 = df_students[(df_students["age"] > 14) | (df_students["age"] < 16)]
 ```
 
+* filter by list of value
+
+```python
+df_students[df_students["name"].isin(['Anne', 'Bob'])]
+```
+
+If we need to filter by multiple columns
+
+```python
+df_students= df_students[df_students[['name', 'class']].isin(['Anne', 'A']).all(axis=1)]
+```
+
+```python
+df_students= df_students[df_students[['name', 'class']].isin({'name': ['Anne', 'Bob'], 'class': ['A', 'B']}).all(axis=1)]
+```
+
 * Via special conditional expression
 
-Beside conditional expression, we can use some function to return a boo series. Such as:
-
-1. `isin(list)` , return true for row those value in the given list
-
-2. `notna()` return true for row those value is not null.
+Beside conditional expression, we can use a bool series as mask series, such as `notna()`.
 
 ## Filter both rows and columns
 
