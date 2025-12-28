@@ -14,7 +14,7 @@ A binary indexed tree is a data structure which:
 
 * Required O(N) memory
 
-Basically, it is an array of length N $ T[0 \ldots N-1] $ where each element $ T_i = f(A_{g(i)}, \ldots, A_i) $ , $ g $ is some function such that $ 0 <= g[i] <= i  $ . The data structure is called tree because there is a presentation of it in form of tree. Which this structure:
+Basically, it is an array of length N $ T[0 \ldots N-1] $ where each element $ T_i = f(A_{g(i)}, \ldots, A_i) $ , $ g $ is some function such that $ 0 <= g[i] <= i  $ . The data structure is called tree because there is a presentation of it in form of tree. With this structure:
 
 * The calculation $f(0, x)$ can be taking as $f(T(x), T(g(x) - 1), T(g(g(x) - 1)) \ldots, T(0) )$ 
 
@@ -52,55 +52,24 @@ Tree presentation:
 
      ![](../images/binary-indexed-tree.png)
 
-```java
-public class BinaryIndexedTree<T> {
+## 1-based index implementation
 
-    private final List<T> bits;
-    private final BinaryOperator<T> func;
-    private final T identifyValue;
-    private final BinaryOperator<T> invertFunc;
+For the 1-based index implementation , $ g(x) $ can be defined as flip the last set bit which can be written as: $ g(x) = x - (x \& (-x)) $  as $ x \& (-x)$ is the last set bit value
 
-    BinaryIndexedTree(
-            List<T> input, BinaryOperator<T> func, T identifyValue, BinaryOperator<T> invertFunc) {
-        this.func = func;
-        this.identifyValue = identifyValue;
-        this.invertFunc = invertFunc;
-        bits = new ArrayList<>(input.size());
-        for (int i = 0; i < input.size(); i++) {
-            bits.add(identifyValue);
-        }
-        for (int i = 0; i < input.size(); i++) {
-            bits.set(i, func.apply(bits.get(i), input.get(i)));
-            int nextIdx = i | (i + 1);
-            if (nextIdx < input.size()) {
-                bits.set(nextIdx, func.apply(bits.get(nextIdx), bits.get(i)));
-            }
-        }
-    }
+* $g(8) = g(1000_2) = 0000_2 = 0$
 
-    void update(int i, T oldVal, T newVal) {
-        while (i < bits.size()) {
-            T removedValue = invertFunc.apply(bits.get(i), oldVal);
-            T updatedValue = func.apply(removedValue, newVal);
-            bits.set(i, updatedValue);
-            i = i | (i + 1);
-        }
-    }
+* $ g(7) = g(111_2) = 110_2 = 6 $ 
 
-    T calculate(int i) {
-        T result = identifyValue;
-        while (i >= 0) {
-            result = func.apply(result, bits.get(i));
-            i = (i & (i + 1)) - 1;
-        }
-        return result;
-    }
+* $g(6) = g(110_2) = 100_2 = 4$
 
-    T calculateRange(int left, int right) {
-        if (left == 0) {
-            return calculate(right);
-        }
-        return invertFunc.apply(calculate(right), calculate(left - 1));
-    }
-}
-```
+* $g(4) = g(100_2) = 000_2 = 0$
+
+h(x) would be defined as $ h(x) = x + x \& (-x)$.
+
+
+
+## For non-group operation
+
+
+
+For non-group operation like min on range $ [0, r] $, we can still do it, but the updation would be limited as updated value must be smaller than original value, also, it would be hard to do on any arbitrary  range $ [l, r]$.

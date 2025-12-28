@@ -1,7 +1,5 @@
 # Fanout
 
-
-
 SQL-fanout is the situation where we combine join and aggregate function (sum, count, avg, etc), these 2 concepts can interact and produce wrong result due to duplicate cells.
 
 A **N-N** or even **1-N** join can multiply a row, which if we apply the aggregate function, may produce wrong result. 
@@ -80,15 +78,3 @@ LEFT JOIN (
   GROUP BY customer_id
 ) v ON c.customer_id = v.customer_id;
 ```
-
-
-
-
-
-
-
-
-
-
-
-

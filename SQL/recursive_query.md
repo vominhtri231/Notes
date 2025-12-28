@@ -39,7 +39,7 @@ WITH employee_hierarchy(EmployeeId, Name, ManagerId, Level) AS (
   WHERE ManagerID IS NULL
   UNION ALL
   -- Recursive
-  SELECT e.EmployeeId, e.Name, e.ManagerId, eh.Level + 1
+  SELECT e.EmployeeId, e.Name, e.ManagerId, eh.Level + 1 
   FROM Employees e
   INNER JOIN employee_hierarchy eh ON e.ManagerId= eh.EmployeeId
 )
