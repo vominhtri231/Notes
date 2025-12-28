@@ -41,25 +41,23 @@ windows_function_name (expression) over(
   select id, sum(value) over()
   -- this will return same sum for all row, one calculation only
   from sales
-  
+  ```
   
   select id, sum(value) over(order by id)
   -- this will return cumulative sum for each row, each would have calculation 
   from sales
-  ```
-  
-  
 
+```
 * frame clause changes the frame which the function is applied to if we want to expand it out of current row
 
 ```sql
 SELECT name,
-       salary,
-       month,
-       SUM(revenue) OVER (PARTITION BY name, month
-                            ORDER BY month
-                            RANGE BETWEEN 2 PRECEDING AND CURRENT ROW
-                          ) AS make_last_3_months_salary
+     salary,
+     month,
+     SUM(revenue) OVER (PARTITION BY name, month
+                          ORDER BY month
+                          RANGE BETWEEN 2 PRECEDING AND CURRENT ROW
+                        ) AS make_last_3_months_salary
 FROM employee
 ```
 
