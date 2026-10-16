@@ -12,7 +12,7 @@ A special binary operation, denoted as $\cdot$ , on set G, which should satisfy:
 
 * **Closure**: already required for binary operation
 
-* **Associativity**: The way we group doesn't change the result $ (a \cdot b)\cdot c = a \cdot (b \cdot c) $
+* **Associativity**: The way we group doesn't change the result $(a \cdot b)\cdot c = a \cdot (b \cdot c)$
 
 * **Identify element**: There is a unique element $e$ that does nothing when combine with any other element: $ a \cdot e = a $
 

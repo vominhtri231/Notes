@@ -2,14 +2,13 @@
 
 ## Pseudo code
 
-- Calculate middle point
+- Get middle point
 - Sort each half
 - Merge them together
 
 ## Pros and cons
 
 - Work great with sorting linked list, where insertion is O(1)
-- Can be used to find inversion count
 - Require additional data when merging array
 - Slow compare to others for small input
 
