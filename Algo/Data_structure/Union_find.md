@@ -21,24 +21,23 @@ The presentative of the set will have $parents[i] == i$.
 To find, just trace up util we find the presentative. 
 To union, just find the 2 presentatives , and set one to be the other's parent.
 
-
 ```java
 void union(int a, int b) {
 
-	int ap = find(a)
-	int bp = find(b)
-	
-	if(ap != bp) {
-		parents[ap] = bp;
-	}
+    int ap = find(a)
+    int bp = find(b)
+
+    if(ap != bp) {
+        parents[ap] = bp;
+    }
 }
 
 int find(int a) {
-	if(a == parents[a] ) {
-		return a;
-	}
-	
-	return find(parents[a]);
+    if(a == parents[a] ) {
+        return a;
+    }
+
+    return find(parents[a]);
 }
 ```
 
@@ -50,17 +49,17 @@ These following optimizations will help to reduce tree's depth.
 If we do **find** operation, we will link each elements to root directly. 
 In the case below, after the `find(7)` operation, we will link each element `7`,`5`,`3`,`2` to `1`
 
-![](../images/path-compression.png)
+![](./images/path-compression.png)
 
 ```java
 int find(int a) {
-	if(a == parents[a]) {
-		return a;
-	}
-	
-	int p = find(parents[a]);
-	parents[a] = p;
-	return p;
+    if(a == parents[a]) {
+        return a;
+    }
+
+    int p = find(parents[a]);
+    parents[a] = p;
+    return p;
 }
 ```
 
@@ -73,22 +72,22 @@ we will find each tree's size / rank, then link the smaller one to the bigger on
 
 void union(int a, int b) {
 
-	int ap = find(a);
-	int bp = find(b);
-	
-	if(ap != bp) {
-		if(rank[a] == rank[b] ) {
-			parent[b] = a;
-			rank[a]++;
-			return;
-		}
-		
-		if(rank[a] > rank [b] ) {
-			rank[b] = a;
-		} else {
-			rank[a] = b;
-		}
-	}
+    int ap = find(a);
+    int bp = find(b);
+
+    if(ap != bp) {
+        if(rank[a] == rank[b] ) {
+            parent[b] = a;
+            rank[a]++;
+            return;
+        }
+
+        if(rank[a] > rank [b] ) {
+            rank[b] = a;
+        } else {
+            rank[a] = b;
+        }
+    }
 }
 
 ```

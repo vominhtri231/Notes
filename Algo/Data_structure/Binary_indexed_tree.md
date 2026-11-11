@@ -48,7 +48,7 @@ The updating index can be calculated as function $h(i)$ , which will flip the la
 
 Tree presentation:
 
-     ![](../images/binary-indexed-tree.png)
+     ![](./images/binary-indexed-tree.png)
 
 ## 1-based index implementation
 
@@ -66,7 +66,7 @@ h(x) would be defined as $h(x) = x + x \& (-x)$.
 
 ## For non-group operation
 
-For non-group operation like min on range $[0, r]$, we can still do it, but the updation would be limited as updated value must be smaller than original value, also, it would be hard to do on any arbitrary  range $[l, r]$.
+For non-group operation like `min`, we can still support it, but the updation would be limited as updated value must be smaller than original value, also, it would be imposible to do on any arbitrary  range $[l, r]$ only for range $[0, r]$.
 
 ## Range update - point query
 
@@ -76,5 +76,7 @@ For range update & point query, consider the D array instead of A array, where $
 
 Each element $T_i$ is now $f(D_{g(i)}, \ldots, D_i)$, 
 
- * For the range $[l,r]$ increase $v$, we will update `D[l] += v`, `D[r] -= r` -> turn into point update
- * For the point query $A_i$ turn to $SUM(D_1, D_2, \ldots, D_i )$ -> turn into range query
+* For the range $[l,r]$ increase $v$, we will update `D[l] += v`, `D[r] -= r` -> turn into point update
+* For the point query $A_i$ turn to $SUM(D_1, D_2, \ldots, D_i )$ -> turn into range query
+
+
